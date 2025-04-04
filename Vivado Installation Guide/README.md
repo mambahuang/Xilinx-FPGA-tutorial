@@ -54,10 +54,14 @@
     ![Pynq-Z2](./png/pynq_boardfile.png)
 
 3.  將下載好的檔案解壓縮，並將Borad File(.xdc不用)資料夾放入Vivado的Board File路徑中  
+
     Vivado File path:  
     "C:\Xilinx\Vivado\2023.2\data\xhub\boards\XilinxBoardStore\boards\Xilinx"  
 
-    ![Board_File_path](./png/BoardFile_path.png)
+    ![Board_File_path](./png/BoardFile_path.png)  
     
+    之後重新打開Vivado在創建Project時就能看到Pynq-Z2的Board了  
+
+    ![Board_File_done](./png/Board_File_done.png)    
 
     
