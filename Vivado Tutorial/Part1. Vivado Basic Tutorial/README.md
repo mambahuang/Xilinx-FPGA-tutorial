@@ -59,3 +59,5 @@
 9.  當前使用之FPGA資訊
 
 10. Synthesis & Implementation 之 Summary
+
+## Part 1.3 simple led control 
