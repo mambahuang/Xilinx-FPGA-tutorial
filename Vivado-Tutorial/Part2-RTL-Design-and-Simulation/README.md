@@ -43,8 +43,13 @@
 
     ![Add_sim_set](./png/Add_simulation_set.png)  
 
-    > Note: 可以透過 Simulation set 管理多組simulation設定，例如不同的 testbench 或模擬條件。本教學使用預設的 `sim_1`，並將 RTL 資料夾內的 `tb.v` 加入即可。未來在設計較大型的電路時，可以根據不同的 module 建立對應的 simulation set，以進行模組化測試與除錯。
+    > 📌 **Note:**  
+    可以透過 Simulation set 管理多組simulation設定，例如不同的 testbench 或模擬條件。  
     >
+    >本教學使用預設的 `sim_1`，並將 RTL 資料夾內的 `tb.v` 加入即可。
+    >
+    >未來在設計較大型的電路時，可以根據不同的 module 建立對應的 simulation set，以進行模組化測試與除錯。
+    
 
 ## Part 2.2 Simulation
 
