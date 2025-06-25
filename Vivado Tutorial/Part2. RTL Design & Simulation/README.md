@@ -18,10 +18,10 @@
    當你點選 `Add Sources` 後，會出現如下畫面，Vivado 提供三種不同類型的來源檔案加入方式：
 
    - `Add or create constraints`  
-     用來新增或建立 `.xdc` 檔案（約束檔），指定 IO 腳位與時序條件。常在專案後期或實作階段使用。
+     用來新增或建立 `.xdc` 檔案（約束檔），指定 **IO 腳位與時序條件**。常在專案後期或實作階段使用。
 
    - `Add or create design sources`  
-     加入你的 RTL 設計檔案（例如 `.v`、`.vhdl`）。這是你撰寫邏輯功能的主程式碼。
+     加入你的 RTL 設計檔案（例如 `.v`、`.vhdl`）。這是你撰寫的電路主程式碼。
 
    - `Add or create simulation sources`  
      匯入 Testbench 模擬檔案（例如 `.tb.v`），這些檔案只會用於模擬階段，**不會參與Synthesis** 。
