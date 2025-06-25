@@ -208,6 +208,12 @@ Xilinx 的設計流程可以分為以下主要階段：
 
     ![Open_Target](./png/Open_Target.png)
 
+5.  等待 Vivado 偵測到 xc7z020 ( Pynq-z2 所使用的 FPGA 晶片組) 後按下 `Program device` ，再點選 `Program`
+
+    ![Progran_Device](./png/Program_Device.png)
+
+6.  燒錄完成後請搭配提供的 RTL Code 觀察 Switch 和 LEDs 的關係
+
 ## Additional  
 
 [Extra2-Synthesis-and-Implementation-Strategies](../Extra2-Synthesis-and-Implementation-Strategies/)
