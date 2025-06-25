@@ -72,3 +72,7 @@
 3.  操作正確就可以看到如下方的波型圖  
 
     ![Waveform](./png/Waveform.png)
+
+## Additional  
+
+[Extra1-Linter](../Extra1-Linter/)
