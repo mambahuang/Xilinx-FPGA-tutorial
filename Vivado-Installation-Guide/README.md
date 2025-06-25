@@ -6,11 +6,11 @@
 
     ![AMD_website](./png/AMD_official_website.png)  
 
-2.  辦好AMD帳號並登入後回到官網點選上方 `下載與支援` 當中的 `Vivado ML` 開發工具  
+2.  辦好 AMD 帳號並登入後回到官網點選上方 `下載與支援` 當中的 `Vivado ML` 開發工具  
 
     ![VivadoML_download](./png/VivadoML_download.png)  
 
-3.  選擇2023.2版本，之後的教學基本上都以2023.2為主  
+3.  選擇 `2023.2` 版本，之後的教學基本上都以 `2023.2` 為主  
     
     ![version](./png/Version.png)  
     ![Download](./png/Download.png)  
@@ -23,14 +23,14 @@
 
     ![Verification_2](./png/Verification_2.png)
     
-    選擇 `Vitis` 安裝整套工具包含軟體 (Vitis) 硬體 (Vivado) 的整合開發套件  
+    選擇 `Vitis` 安裝整套工具包含軟體 `Vitis` 硬體 `Vivado` 的整合開發套件  
 
     ![Visits](./png/Vitis.png)
 
-    根據您使用的FPGA板選擇對應的Device  
-    KV260 -> Kria SOMs and Starter Kits  
-    Pynq-Z2 -> SoC and 7 Series FPGAs  
-    Zedboard -> SoC and 7 Series FPGAs  
+    根據您使用的FPGA板選擇對應的 Device  
+    - KV260 -> Kria SOMs and Starter Kits  
+    - Pynq-Z2 -> SoC and 7 Series FPGAs  
+    - Zedboard -> SoC and 7 Series FPGAs  
 
     可以只選擇你所要用的 FPGA 板去做安裝，若 Ultrascale 也安裝將會使用到較多的空間  
 
@@ -63,7 +63,7 @@
 3.  將下載好的檔案解壓縮，並將 Borad File (.xdc不用)資料夾放入 Vivado 的 Board File 路徑中  
 
     Vivado File path:  
-    "C:\Xilinx\Vivado\2023.2\data\xhub\boards\XilinxBoardStore\boards\Xilinx"  
+    `C:\Xilinx\Vivado\2023.2\data\xhub\boards\XilinxBoardStore\boards\Xilinx` 
 
     ![Board_File_path](./png/BoardFile_path.png)  
     
