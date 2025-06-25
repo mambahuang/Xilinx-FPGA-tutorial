@@ -25,8 +25,8 @@ Xilinx 的設計流程可以分為以下主要階段：
     >   - 目標為 standard cell library，如 AND2_X1、DFF_X1 等  
     >   - 使用工具如 Design Compiler、Cadence Genus  
     >   - 產出 gate-level netlist 與 SDF 延遲檔，供 Place & Route (P&R) 與 Gate-level simulation 使用  
-    >  
-    > ✅ 總結：FPGA 合成注重邏輯與資源映射，ASIC 合成則聚焦於電路最佳化與製程導向。
+    
+
 
 4.  **Implementation**  
     包含 Placement 與 Routing 兩個階段，將合成後的邏輯元件實際配置到 FPGA 的物理資源上，  
@@ -38,8 +38,6 @@ Xilinx 的設計流程可以分為以下主要階段：
     > - **Route Design**：完成所有訊號間連線並考量時序需求  
     >
     > **Implementation 成功後，Vivado 會執行 Timing Summary 報告，檢查是否滿足時序要求（Setup / Hold）。**
-    >
-    >✅ 成功的 Implementation 是產生 Bitstream 前的重要條件。  
 
 5.  **Generate Bitstream**  
     產生可供下載的 `.bit` 檔，燒錄進 FPGA。
@@ -67,7 +65,7 @@ Xilinx 的設計流程可以分為以下主要階段：
 > - **I/O 腳位綁定（Pin Assignment）**：定義實體腳位對應的 signal，例如將 `clk` 對應到 `W5`
 > - **I/O 標準（I/O Standards）**：設定電壓與訊號標準，如 `LVCMOS33`
 >
-> Constraint 是 **Synthesis 與 Implementation** 階段中「時序分析、資源配置」的重要依據。  
+> Constraint 是 **Implementation** 階段中「時序分析、資源配置」的重要依據。  
 > 若沒有正確的 `.xdc`，Vivado 可能無法正確進行佈線，或產生有效的 Bitstream。
 
 > 💡 **延伸補充：Constraint 類似於 ASIC 設計中的 `.sdc` 或 `.sdf`**  
@@ -78,7 +76,7 @@ Xilinx 的設計流程可以分為以下主要階段：
 > - `.xdc` ≈ `.sdc`：用來定義時脈、I/O 延遲、Pin Mapping 等設計約束  
 > - `.xdc` 不等同 `.sdf`，但其 Clock Constraint 可視為 SDF 延遲分析的前置依據  
 >
-> ✅ 在 FPGA 流程中，Vivado 直接根據 `.xdc` 執行時序分析與實體資源配置（Place & Route）。
+> 在 FPGA 流程中，Vivado 直接根據 `.xdc` 執行時序分析與實體資源配置（Place & Route）。
 
 ## Part 3.2 Synthesis
 1.  點選左側 **SYNTHESIS → Run Synthesis**，開始進行 RTL 合成流程。
@@ -100,10 +98,8 @@ Xilinx 的設計流程可以分為以下主要階段：
     >
     > 合成的輸出是一份 **Netlist（邏輯網表）**，描述模組之間的連接關係，  
     > 這份 Netlist 會提供給下一步的 Implementation（實作）使用。
-    >
-    > ✅ 小結：Synthesis 是將「抽象邏輯描述」轉換為「可配置邏輯單元」的過程，是實體實現前的關鍵步驟。  
 
-2.  待合成完成後可以點開左側 `SYNTHESIS -> Open Synthesized Design`
+2.  待合成完成後可以點開左側 **SYNTHESIS -> Open Synthesized Design**
 
     ![Synthesis_Report](./png/Synthesis_Report.png)  
 
@@ -119,14 +115,13 @@ Xilinx 的設計流程可以分為以下主要階段：
 
     但要注意：
 
-    📌 除了資源類（Utilization、Power）比較接近最終值之外，
+    >📌 除了資源類（Utilization、Power）比較接近最終值之外，
     大多數 Report（尤其是 Timing 類）都只是基於 Netlist 的預估，
     因為此時尚未經過 Placement 與 Routing，缺乏實體路徑與實際延遲資訊。
 
-3.  點選左側的 `SYNTHESIS -> Open Synthesized Design -> Schematic` 可以看到經過Synthesis後的電路圖
-    ![Schematic_synthesis.png](./png/Schematic_synthesis.png)
+3.  點選左側的 `SYNTHESIS -> Open Synthesized Design -> Schematic` 可以看到經過Synthesis後的電路圖  
 
-    📌 常見邏輯元件說明
+    ![Schematic_synthesis.png](./png/Schematic_synthesis.png)
 
     - **LUT6**（6-input Look-Up Table）  
 
@@ -134,7 +129,7 @@ Xilinx 的設計流程可以分為以下主要階段：
 
         LUT6 是一種可編程邏輯單元，具有 6 個輸入，可以實現任何 6-input 的布林函數。
 
-        Vivado 會自動將 RTL 中的邏輯運算（如 assign、always 區塊中的邏輯條件）映射為 LUT。
+        Vivado 會自動將 RTL 中的邏輯運算映射為 LUT。
 
         LUT 是組成 FPGA 設計邏輯的核心之一。
 
@@ -144,11 +139,75 @@ Xilinx 的設計流程可以分為以下主要階段：
         
         是一種帶有清除（Clear）與使能（Enable）訊號的 D 型正緣觸發器。
 
-        通常用來實作暫存器，儲存狀態或同步資料。
+        通常用來實作暫存器，儲存狀態或同步資料。  
+
+4.  點選左側上方 **Project Manager** 後跳出的 **Project Summary** 可以看到Utilization的結果，其餘的則要等到 **Implementation** 後才能看到  
+
+    ![Synthesis_Overview](./png/Synthesis_Overview.png)
 
 ## Part 3.3 Implementation
+1.  點選左側 **IMPLEMENTATION → Run Implementation**  
 
+    ![Implementation](./png/Implementation.png)
 
+2.  等待實作完成後，點選左側的 **IMPLEMENTATION → Open Implemented Design**  可以看到你的電路實際放到 FPGA 的晶片上面時的擺放位置  
 
-## Additional
+    ![Implemented_Design](./png/Implementation_Device.png)
+
+3.  **Implementation** 階段 Vivado 會統整出:
+    > - **Power Estimation**：預估功耗  
+    > - **Timing Analysis**：分析 Setup/Hold Timing 是否滿足設計要求  
+    > - **DRC（Design Rule Check）**：檢查佈線、資源使用是否違反設計規則  
+    > - **Utilization Report**：彙整資源使用情況（LUT、FF、BRAM 等）  
+    > - **Schematic Viewer**：可查看實體配置後的電路圖  
+
+4.  在 **Project Summary** 中可以看到 Implementation 的結果，包含 Timing、Utilization、Power 等資訊  
+
+    ![Implementation_Overview](./png/Implementation_Overview.png)  
+
+## Part 3.4 Generate Bitstream  
+
+1.  點選左側 **PROGRAM AND DEBUG → Generate Bitstream**
+
+    ![Generate_Bitstream](./png/Generate_Bitstream.png)
+
+2.  Bitstream 生成完後會有如下畫面  
+
+    ![Bitstream_Generated](./png/Bitstream_Generated.png)
+
+## 為什麼要進行 Bitstream Generation？
+
+完成 **Synthesis** 與 **Implementation** 後， Design 已經映射到實體的 FPGA 資源上，但需要透過燒入的方式燒入進去 FPGA 當中，該`.bit`檔案就是所要燒入進去的資源。
+
+**Bitstream Generation** 會將這些設計資訊轉換為 FPGA 可接受的「配置資料」，也就是 `.bit` 或 `.bin` 檔案，主要用途如下：
+
+> 📌 **Bitstream 是用來「Program」FPGA 的**，包含以下資訊：
+> - 邏輯元件的對應與連接（from Netlist）
+> - Placement & Routing 結果
+> - I/O 配置與約束（from .xdc）
+
+下圖為 XC4000 系列的 Fast Carry 硬體架構。  
+可以看到圖中 M 代表多工器（MUX），Bitstream 會被用來控制這些 MUX 的選擇路徑，藉此設定每個邏輯元件與連線的實際行為與配置
+
+![XC4000_Fast_Carry](./png/XC4000_Fast_Carry.png)  
+
+## Part 3.5 Program to FPGA
+
+![PYNQ](./png/PYNQ.jpg)
+
+1.  將 FPGA 與電腦端連接 (將 Micro USB 插上 Port 2)
+2.  將8號區的 Jumper 插至 `JTAG` 的位置
+
+    >FPGA 在使用 `JTAG`（Joint Test Action Group）模式下進行配置時，會依據 IEEE 1149.1 標準（又稱為 `Boundary-Scan`）來進行串列資料傳輸。可將我們的 Bitstream 透過 `Boundary-Scan` 的方式燒入進去板子中
+    >
+    >📌 JTAG 是一種標準的 Debug 與燒錄介面，所有主流 FPGA（如 Xilinx、Intel）皆支援此標準。
+
+3.  打開開關 (3號區) **關機時一定要先關閉開關才可以拔除電源線**
+
+4.  開啟 FPGA 後，回到 Vivado 並點選 `Open Hardware Manager -> Open Target -> Auto Connect`  
+
+    ![Open_Target](./png/Open_Target.png)
+
+## Additional  
+
 [Extra2-Synthesis-and-Implementation-Strategies](../Extra2-Synthesis-and-Implementation-Strategies/)
