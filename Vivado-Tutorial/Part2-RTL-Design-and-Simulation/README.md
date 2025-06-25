@@ -11,7 +11,7 @@
 3.  在 Flow Navigator 中點選  
     **Project Manager → Add Sources**  
     或從 **Source** 區塊點選 **+**  
-    
+
     ![Add_Source](./png/Add_Source.png)
 
 4. **Add Source 選單：**
@@ -49,7 +49,6 @@
 ## Part 2.2 Simulation
 
 1.  點選左上角的 `Project Manager` ，再點選 `Settings`  
-
     `simulation set` 的地方選擇剛剛設定的 `sim_1`
 
     ![Project_Settings](./png/Project_settings.png)  
