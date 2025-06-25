@@ -1,4 +1,4 @@
-# Part2. RTL Design & Simulation
+# Part2-RTL-Design-Simulation
 此次教學將使用先前在 `Part1` 創立好的 Project ，匯入預先準備好的 RTL 設計與 Testbench 檔案，並透過 Vivado 進行模擬驗證。
 
 ## Part 2.1 Open Project and Add Source File
@@ -27,4 +27,3 @@
      匯入 Testbench 模擬檔案（例如 `.tb.v`），這些檔案只會用於模擬階段，**不會參與Synthesis** 。
 
     ![Add_Source_Panel](./png/Add_Source_Panel.png)
- 

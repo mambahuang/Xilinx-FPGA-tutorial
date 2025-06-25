@@ -1,35 +1,6 @@
-# Part1. Vivado Basic Tutorial
+# Part1-Vivado-Basic-Tutorial
 
-## Part 1.1 Board File
-1.  根據你所使用的 FPGA Board 去其官方網站下載對應的 Board File，這樣 Vivado 才能辨識並正確套用該板子的配置。
-
-2.  以下以 PYNQ-Z2 為例，說明如何安裝 Board File：
-
-3.  **前往該塊板子的官網下載 Board File**  
-    https://www.e-elements.com.tw/en/products-en/xup-pynq/pynq-z2/  
-    ![Website](./png/PYNQ_Z2_Website.png)  
-    - `Board File`：包含板子資訊，用於 Vivado 自動載入設定。
-    - `Master XDC`：包含 I/O 腳位限制，需匯入 Vivado 專案中以對應硬體連接腳位。  
-    > **備註：建議現在就先下載 Master XDC**
-    > 
-    > `Master XDC` 檔案會在後續建立 RTL 設計並做實體實作（Implementation）時使用，  
-    > 它用來定義 FPGA 腳位與外部元件（如按鈕、LED、時脈）的對應關係。  
-    > 為了後續方便，建議此階段就一併下載並妥善保存。
-
-
-4.  **安裝 Board File：**
-    - 請將解壓後的 `pynq-z2` 資料夾放入以下路徑中：
-
-      ```
-      <你自訂的 Vivado 安裝目錄>\<version>\data\boards\board_files\
-      ```  
-      ![Board_File_Path](./png/Board_File_Path.png)  
-      
-    - 若 `board_files` 或上層資料夾不存在，請自行手動創建。
-
-5. **完成後重啟 Vivado**，在 Create Project → Board 頁面中即可選擇 `PYNQ-Z2` 板子。
-
-## Part 1.2 Create Vivado Project
+## Part 1.1 Create Vivado Project
 
 1.  點開 Vivado 並且按下 Create Project  
 
@@ -51,7 +22,7 @@
 
     ![Project_done](./png/project_done.png)  
 
-## Part 1.3 Introduction to Vivado Gui  
+## Part 1.2 Introduction to Vivado Gui  
 
 ![Vivado_GUI](./png/Vivado_GUI.png)  
 
