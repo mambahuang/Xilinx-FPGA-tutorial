@@ -12,6 +12,5 @@
 > Elaborated Design 是 Vivado 在前綜合階段根據原始 RTL 程式（Verilog/VHDL）做靜態分析後，
 > 將 `module`、`always`、`assign` 等邏輯自動建構成結構化圖形。
 >
-> 因此你可以：
 > - 不經 Synthesis 直接在 `Open Elaborated Design` 中看到 RTL 架構圖
 > - 透過 `Run Linter` 對展開後的邏輯進行靜態分析（如：combinational loop、未使用 bit）
