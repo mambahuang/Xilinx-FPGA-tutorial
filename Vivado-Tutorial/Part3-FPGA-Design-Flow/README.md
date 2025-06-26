@@ -23,7 +23,7 @@ Xilinx 的設計流程可以分為以下主要階段：
     >  
     > - **ASIC Synthesis**：  
     >   - 目標為 standard cell library，如 AND2_X1、DFF_X1 等  
-    >   - 使用工具如 Design Compiler、Cadence Genus  
+    >   - 使用工具如 Design Compiler 
     >   - 產出 gate-level netlist 與 SDF 延遲檔，供 Place & Route (P&R) 與 Gate-level simulation 使用  
     
 
@@ -32,8 +32,7 @@ Xilinx 的設計流程可以分為以下主要階段：
     包含 Placement 與 Routing 兩個階段，將合成後的邏輯元件實際配置到 FPGA 的物理資源上，  
     如 CLB、Routing Channel、IO Bank 等。此階段會根據時序需求與佈局限制，進行最佳化配置。  
 
-    > 📌 實務上，Vivado 在 Implementation 階段會自動執行以下三步：  
-    > - **Opt Design**：設計最佳化  
+    > 📌 實務上，Vivado 在 Implementation 階段會執行以下步驟：   
     > - **Place Design**：將邏輯元件放置到 FPGA 上的具體位置（CLB 位置）  
     > - **Route Design**：完成所有訊號間連線並考量時序需求  
     >
@@ -89,15 +88,15 @@ Xilinx 的設計流程可以分為以下主要階段：
 
     > 📌 **Synthesis 是在做什麼？**
     >
-    > 在 FPGA 設計中，Synthesis（合成）負責將你撰寫的 RTL 程式碼（如 Verilog/VHDL）  
+    > 在 FPGA 設計中，Synthesis 負責將你撰寫的 RTL 程式碼（如 Verilog/VHDL）  
     > 轉換成可由 FPGA 實際執行的邏輯元件，例如：
     >
-    > - **LUT（Look-Up Table）**：用來實現邏輯閘功能
-    > - **Flip-Flop（FF）**：用來實現暫存器
-    > - **MUX / Decoder / Carry Chain 等邏輯資源**
+    > - **LUT（Look-Up Table）**
+    > - **Flip-Flop（FF）**
+    > - **MUX / Decoder / Carry Chain ....**
     >
-    > 合成的輸出是一份 **Netlist（邏輯網表）**，描述模組之間的連接關係，  
-    > 這份 Netlist 會提供給下一步的 Implementation（實作）使用。
+    > Synthesis的輸出是一份 **Netlist**，描述模組之間的連接關係，  
+    > 這份 Netlist 會提供給下一步的 Implementation 使用。
 
 2.  待合成完成後可以點開左側 **SYNTHESIS -> Open Synthesized Design**
 
@@ -184,7 +183,7 @@ Xilinx 的設計流程可以分為以下主要階段：
 > 📌 **Bitstream 是用來「Program」FPGA 的**，包含以下資訊：
 > - 邏輯元件的對應與連接（from Netlist）
 > - Placement & Routing 結果
-> - I/O 配置與約束（from .xdc）
+> - I/O 配置與 Constraint（from .xdc）
 
 下圖為 XC4000 系列的 Fast Carry 硬體架構。  
 可以看到圖中 M 代表多工器（MUX），Bitstream 會被用來控制這些 MUX 的選擇路徑，藉此設定每個邏輯元件與連線的實際行為與配置
