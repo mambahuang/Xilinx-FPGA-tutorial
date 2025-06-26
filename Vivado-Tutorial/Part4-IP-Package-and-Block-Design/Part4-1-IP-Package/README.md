@@ -38,9 +38,9 @@ Vivado 預設會對每個 IP 執行 `OOC synthesis`，產生 `.dcp(design check 
 
 ![OOC_and_global_syn](./png/OOC_and_global_syn.jpg)
 
-# Part4.1.1 Package Your IP
+# Part 4.1.1 Package Your IP
 
-1.  在包裝 IP 的過程中，有時候會需要開數個暫時拿來使用的 Vivado Project，這邊我們先創建一個新的 Vivado Project，並將`/RTL/RGB_LED.v` 和 `/XDC/RGB_LED_ooc.xdc` 加入專案當中
+1.  在包裝 IP 的過程中，有時候會需要開數個暫時拿來使用的 Vivado Project，這邊我們先創建一個新的 Vivado Project，並將`../RTL/RGB_LED.v` 和 `../XDC/RGB_LED_ooc.xdc` 加入專案當中
 
 2.  將`RTL`跟`*OOC.xdc`加入專案後，照著後續操作調整`xdc`檔案的 **Properties**  
 
@@ -64,15 +64,15 @@ Vivado 預設會對每個 IP 執行 `OOC synthesis`，產生 `.dcp(design check 
 
     ![New_IP](./png/New_IP.png)
 
-7.  另外再重複一次上方的步驟包裝另一個新的IP，並只需加入 `/RTL/PWM_Decoder.v`
+7.  另外再重複一次上方的步驟包裝另一個新的IP，並只需加入 `/..RTL/PWM_Decoder.v`
 
-##  Part4.1.2 Instantiating the Packaged IP in RTL
+##  Part 4.1.2 Instantiating the Packaged IP in RTL
 
-1.  開啟一個 Vivado Project，並加入 `/RTL/top.v` , `/XDC/pynq-z2_v1.0.xdc`  
+1.  開啟一個 Vivado Project，並加入 `../RTL/top.v` , `../XDC/pynq-z2_v1.0.xdc`  
 
     ![New_Proj](./png/New_Proj.png)  
 
-2.  上一步驟加入 `/RTL/top.v` 後，可以看到內部有宣告兩個我們先前的 IP ，但在File Hierarchy 裡面顯示為 `Not Found`，因此我們要將先前的 IP Import 進來並`Generate`，點選 `PROJECT MANAGER -> setting -> IP/Repository`  
+2.  上一步驟加入 `../RTL/top.v` 後，可以看到內部有宣告兩個我們先前的 IP ，但在File Hierarchy 裡面顯示為 `Not Found`，因此我們要將先前的 IP Import 進來並`Generate`，點選 `PROJECT MANAGER -> setting -> IP/Repository`  
 
     ![IP_import](./png/IP_import.png)
     

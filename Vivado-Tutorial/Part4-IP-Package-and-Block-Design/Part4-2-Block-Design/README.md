@@ -10,7 +10,7 @@ Vivado 的 `Block Design` 是一個圖形化設計平台，可讓你使用拖拉
 >
 >![Block_Design](./png/Block_Design.png)
 
-## Part4.2.1 Create Block Design  
+## Part 4.2.1 Create Block Design  
 
 1.  新創一個 Vivado Project，先照著 `Part4.1.2` 的方式將 `IP_repo` import進來該 Project
 
@@ -70,7 +70,7 @@ Vivado 的 `Block Design` 是一個圖形化設計平台，可讓你使用拖拉
 
     ![Let_Vivado_Auto](./png/Let_Vivado_Auto.png)
 
-10. 最後加入 `/XDC/pynq-z2_v1.0.xdc` 到 project 中
+10. 最後加入 `../XDC/pynq-z2_v1.0.xdc` 到 project 中
 
 11. 接著即可執行 `Synthesis -> Implementation -> Generate Bitstream`  
 (直接按下 Generate Bitstream 其實也會把前面兩步驟都一起做完)  
