@@ -65,9 +65,14 @@ Xilinx 的設計流程可以分為以下主要階段：
 > - **I/O 標準（I/O Standards）**：設定電壓與訊號標準，如 `LVCMOS33`
 >
 > Constraint 是 **Implementation** 階段中「時序分析、資源配置」的重要依據。  
-> 若沒有正確的 `.xdc`，Vivado 可能無法正確進行佈線，或產生有效的 Bitstream。
-
-> 💡 **延伸補充：Constraint 類似於 ASIC 設計中的 `.sdc` 或 `.sdf`**  
+> 若沒有正確的 `.xdc`，Vivado 可能無法正確進行佈線，或產生有效的 Bitstream。  
+>>
+>📌 Note: **Constraint Set**  
+>Vivado 支援使用 Constraint Set 來管理多組時序與 I/O 限制設定，例如不同的設計階段或測試情境。  
+>
+>未來在面對大型設計時，可以根據不同模組或需求建立對應的 Constraint Set，方便進行模組化驗證與切換設計條件。
+>
+> 📌 **延伸補充：Constraint 類似於 ASIC 設計中的 `.sdc` 或 `.sdf`**  
 >
 > 如果你熟悉 ASIC 流程，Vivado 中的 `.xdc`（Xilinx Design Constraints）在概念上  
 > 很類似 Design Compiler 中的 `.sdc`（Synopsys Design Constraints）與 `.sdf`（Standard Delay Format）：
@@ -76,6 +81,7 @@ Xilinx 的設計流程可以分為以下主要階段：
 > - `.xdc` 不等同 `.sdf`，但其 Clock Constraint 可視為 SDF 延遲分析的前置依據  
 >
 > 在 FPGA 流程中，Vivado 直接根據 `.xdc` 執行時序分析與實體資源配置（Place & Route）。
+
 
 ## Part 3.2 Synthesis
 1.  點選左側 **SYNTHESIS → Run Synthesis**，開始進行 RTL 合成流程。
