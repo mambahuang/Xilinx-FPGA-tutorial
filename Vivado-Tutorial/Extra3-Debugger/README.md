@@ -22,10 +22,43 @@
 然後執行 `Synthesis -> Implementation -> Generate Bitstream`
 並將 Bitstream file 燒錄進 FPGA
 
-5.  可先跳到 `Extra 3.3` 觀看 `ILA Waveform`
+5.  可先跳到 `Extra 3.3` 觀看 `ILA Waveform`， `Extra 3.2 Mark Debug` 為另一種設定方法
 
 ## Extra 3.2 Mark Debug
 
+1.  將 `Part4-2` 的電路拿去合成後，點選左側 `Open Synthesized Design -> Schematic`  
+
+    ![Schematic](./png/Schematic.png)
+
+2.  假設我們要觀察 `RGB LED 給出的三個 Output`、以及 `PWM_Decoder 的 sw 訊號`，將 Schematic 中 `design_1` 左上角的 + 點開並找到我們要看的四條訊號線，按住 Ctrl 選擇這四條線使其變成藍色後，在其中一條線上按右鍵，點選 `Mark Debug`
+
+    ![Mark_Debug](./png/Mark_Debug.png)  
+
+3.  點選左側 `Open Synthesized Design -> Set Up Debug`  
+    
+    ![Setup_Debug](./png/Setup_Debug.png)  
+
+4.  在 `Clock Domain Undefined` 的地方右鍵，選擇 `Select Clock Domain`  
+
+    ![Clock_Undefined](./png/Clock_Undefined.png)
+
+5.  選擇 `clk_IBUF`
+
+    ![Select_Clk](./png/Select_Clock.png)  
+    
+    完成後如下圖  
+
+    ![Debug_Setting_Complete](./png/Debug_Setting_Complete.png)
+
+6.  設定 `Sample Data Width`  
+
+    ![Setting_Width](./png/Setting_Width.png)
+
+7.  設定完成後再重新 Synthesize 一次，再打開 Schematic 會發現多了兩個 Debug Blocks  
+
+    ![Mark_Debug_Done](./png/Mark_Debug_Done.png)
+
+8.  `Implementation -> Generate Bitstream`，並燒錄到 FPGA 上
 
 ## Extra 3.3 ILA Waveform
 
@@ -83,3 +116,15 @@
 
 >📌 Note：  
 >- 若訊號為高速 clock domain，建議先經過 D Flip-Flop 進行觸發延遲再接入 ILA  
+> - ILA 必須由 **free-running clock** 驅動，確保時脈不會被 gating、reset、或控制邏輯中斷  
+> - 避免使用 gated clock 或條件性 enable 的 clock 作為 ILA 的 clock source  
+> - 若觀察跨 clock domain 訊號，請先將其同步處理後再接入 ILA，以避免 metastability
+
+
+>📌 Free-running clock： 
+>-  不會被設計中的控制訊號（如 enable/reset）中斷的時脈  
+>-  與被觀察訊號在同一個 clock domain 或可被同步跨域  
+>
+>Example in PYNQ-Z2 :
+>    - 系統主時脈( H16 pin in PYNQ-Z2 ): clk_125MHz  
+>    - Zynq PS 送出的 FCLK_CLK0
