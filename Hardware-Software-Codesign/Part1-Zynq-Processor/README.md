@@ -46,3 +46,15 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 5.  對 ZYNQ7 點兩下進行 `customize`，本次實驗只需用到 ZYNQ processor 本身，所以要把沒用到的 I/O 取消。 
 
     ![Customization_Panel](./png/Customization_Panel.png)
+
+6.  點選跳出的設定頁面中左側的 `Peripheral I/O Pins`，並將所有的 `Peripheral` 都先取消掉，最後勾選 `UART0` 即可
+
+    ![Peripheral_Settings](./png/Peripheral_Setting.png)
+
+    >   ### I/O Bank ?
+    >   Xilinx FPGA 的 I/O 腳位通常會被劃分為多個 I/O Bank（如 Bank 0、Bank 1...），  
+    >   每個 Bank：
+    >   -   具有獨立的供電電壓（如 3.3V、1.8V）所屬腳位必須使用同樣的電壓等級
+    >   -  每個 Bank 的腳位支援的 I/O 標準（LVCMOS33、LVCMOS18 等）根據電壓而異  
+
+7.  
