@@ -57,4 +57,4 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
     >   -   具有獨立的供電電壓（如 3.3V、1.8V）所屬腳位必須使用同樣的電壓等級
     >   -  每個 Bank 的腳位支援的 I/O 標準（LVCMOS33、LVCMOS18 等）根據電壓而異  
 
-7.  
+7.  點選左側 `PS-PL Configuration -> General -> UART0 Baud Rate` 可以設定 UART 的 Baud Rate，
