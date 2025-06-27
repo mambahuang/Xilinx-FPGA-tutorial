@@ -1,4 +1,4 @@
-# Extra4-Constraint
+# Extra3-Constraint
 
 本章將介紹 PYNQ-Z2 開發板對應的 `.xdc`（constraints file）使用方式。  
 
@@ -6,14 +6,14 @@
 
 ---
 
-## 1.   為什麼需要 constraint？
+## Extra3.1   為什麼需要 constraint？
 
 在實體 FPGA 上，`module` 中的 I/O port 並不會自動對應到開發板上的引腳位置。  
 必須透過 `.xdc` 限制檔，將 RTL 中的 port 連接到具體的 **pin 編號（e.g. H17）**。
 
 ---
 
-##  2.  PYNQ-Z2 的 constraint 來源
+##  Extra3.2  PYNQ-Z2 的 constraint 來源
 [PYNQ-Z2 的 constraint下載連結](https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2_v1.0.xdc.zip)  
 
 使用時請記得：

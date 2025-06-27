@@ -1,9 +1,9 @@
-# Extra3-Debugger
+# Extra4-Debugger
 
 本章將介紹如何在 Vivado 中使用 **ILA（Integrated Logic Analyzer）** 進行 **FPGA 硬體偵錯**。  
 透過 ILA 工具，我們可以在電路實際運行於 FPGA 上時，觀察內部訊號的變化，協助排除模擬階段無法捕捉的問題。  
 
-## Extra 3.1 ILA Block Design
+## Extra 4.1 ILA Block Design
 
 1.  沿用 `Part4-2` 的 Block Design，在 Vivado 提供的 IP Catalog 中搜尋 `ILA`，將其加入設計中。    
 
@@ -22,9 +22,9 @@
 然後執行 `Synthesis -> Implementation -> Generate Bitstream`
 並將 Bitstream file 燒錄進 FPGA
 
-5.  可先跳到 `Extra 3.3` 觀看 `ILA Waveform`， `Extra 3.2 Mark Debug` 為另一種設定方法
+5.  可先跳到 `Extra 4.3` 觀看 `ILA Waveform`，`Extra 4.2 Mark Debug` 為另一種設定方法
 
-## Extra 3.2 Mark Debug
+## Extra 4.2 Mark Debug
 
 1.  將 `Part4-2` 的電路拿去合成後，點選左側 `Open Synthesized Design -> Schematic`  
 
@@ -60,9 +60,9 @@
 
 8.  `Implementation -> Generate Bitstream`，並燒錄到 FPGA 上
 
-## Extra 3.3 ILA Waveform
+## Extra 4.3 ILA Waveform
 
-1.  `Extra 3.1` 和 `Extra 3.2` 的電路燒入進去 FPGA 後，`Debug Probes` 視窗將會開啟，若沒有的話請點選 `Window -> Debug Probes`  
+1.  `Extra 4.1` 和 `Extra 4.2` 的電路燒入進去 FPGA 後，`Debug Probes` 視窗將會開啟，若沒有的話請點選 `Window -> Debug Probes`  
 
     ![ILA_Waveform](./png/ILA_Waveform.png)
 
