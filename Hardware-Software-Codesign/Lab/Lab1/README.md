@@ -41,3 +41,7 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 ![](png/main.png)
 
+## Step 5
+依序點選  
+Platform > Build   
+Application > Build > Run  
