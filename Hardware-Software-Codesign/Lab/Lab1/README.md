@@ -41,4 +41,4 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 ![](png/main.png)
 
-
+> 💡 **備註：** 詳細註解可參考 https://github.com/ukp66482/Deep-Learning-IC/tree/main/hw6。
