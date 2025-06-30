@@ -63,5 +63,11 @@ Application > Build > Run
 
 File > Send file
 ![](png/send_file.png)
-![](png/send.png)
+![](png/Send.png)  
+
+等待資料傳輸
+![](png/Bytes_transfer.png)  
+
+Bytes transferred = 263224 表示完成
+
 
