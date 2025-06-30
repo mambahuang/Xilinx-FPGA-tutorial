@@ -71,3 +71,10 @@ File > Send file
 Bytes transferred = 263224 表示完成
 
 
+### Step 8  使用 HxD 來開啟 log file
+
+用 HxD 來開啟 log file 後，點選另存新檔，檔名記得加入 .bmp 。
+
+
+### Step 9 開啟 .bmp 檔察看結果。
+
