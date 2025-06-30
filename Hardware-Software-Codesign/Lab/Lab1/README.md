@@ -46,12 +46,18 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 Platform > Build   
 Application > Build > Run  
 
-## Step 6 
+## Step 6  利用 Tera Term 傳輸影像資料
 開啟 Tera Term  ， 選擇 Serial 。  
 
 設定 Baud rate 。
 ![](png/setup.png)
 ![](png/Baud.png)
+
+
+建立 log file  
+![](png/log.png)
+![](png/log_setup.png)
+
 
 
 
