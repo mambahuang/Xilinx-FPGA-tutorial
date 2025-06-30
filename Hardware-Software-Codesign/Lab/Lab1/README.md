@@ -80,5 +80,5 @@ ___
 用 HxD 來開啟 log file 後，點選另存新檔，檔名記得加入 .bmp 。
 
 ___
-### Step 9 開啟 .bmp 檔察看結果。
+### Step 9 開啟 .bmp 檔查看結果。
 ![](png/binary.bmp)  
