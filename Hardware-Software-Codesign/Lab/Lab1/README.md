@@ -10,5 +10,6 @@
 
 ## Step 3 Run Implementation
 在左側 PROJECT MANAGER 中尋找 > 按下 Run Implementation。
+> 💡 **備註：** 在這個 Lab 中無須產生 bitstream。
 
 ## Step 4 Launch Vitis IDE
