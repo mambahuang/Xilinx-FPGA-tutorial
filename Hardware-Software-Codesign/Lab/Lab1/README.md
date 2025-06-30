@@ -9,12 +9,12 @@
 
 
 
-參考輸出結果 :
+參考輸出結果 :  
 ![](png/answer.png)
 
 
 ## Problem 2 
-在這個lab中，學習如何使用 UART 在 PC 和 PYNQ 之間進行通訊。PC 會透過 UART 傳送一張圖片到 PYNQ，PYNQ 會將原始圖片經過二值化處理後，最後再將轉換後的圖片傳回給 PC。
+在這個lab中，學習如何使用 UART 在 PC 和 PYNQ 之間進行通訊。PC 會透過 UART 傳送一張圖片到 PYNQ，PYNQ 會將原始圖片經過二值化處理後，最後再將轉換後的圖片傳回給 PC。  
 ![](png/picture.png)
 
 ## Step 1 
@@ -32,5 +32,6 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 ## Step 3 
 打開 Application > Source > lscript.ld  
 更改 Heap Size 的值。  
+
 ![](png/Heap.png)
 
