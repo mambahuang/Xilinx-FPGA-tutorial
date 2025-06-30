@@ -94,6 +94,10 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 
     ![Export_Hardware](./png/Export_Hardware.png)
 
+14. 選擇 `Pre Synthesis` ，這次設計沒有使用到 Programmable Logic 所以沒有 Bitstream ，後續設計如果有使用到 PL 端就需要 `include Bitstream`
+
+    ![Pre_Synthesis](./png/Pre_Synthesis.png)  
+
     >   📌 為什麼這裡可以不產生 Bitstream?  
     >   Bitstream 是用來「配置 FPGA 的 Programmable Logic」。
     >   如果你只用 PS（例如 ARM Cortex-A9 跑一段 UART 程式），完全沒有用到 PL，就不需要產生 .bit 檔，也不需要下載到 PL 裡。  
