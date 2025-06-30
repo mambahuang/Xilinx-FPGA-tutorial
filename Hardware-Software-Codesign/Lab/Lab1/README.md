@@ -27,5 +27,9 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 
 ## Step 2
-照著 Part1 的步驟完成 block design 並且建立 platform。
+照著 Part1 的步驟完成 block design 並且建立 platform 、 Application。
+
+## Step 3 
+打開 Application > Source > lscript.ld  
+更改 Heap Size 的值。
 
