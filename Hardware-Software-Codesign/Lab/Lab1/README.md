@@ -45,3 +45,13 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 依序點選  
 Platform > Build   
 Application > Build > Run  
+
+## Step 6 
+開啟 Tera Term  ， 選擇 Serial 。  
+
+設定 Baud rate 。
+![](png/setup.png)
+![](png/Baud.png)
+
+
+
