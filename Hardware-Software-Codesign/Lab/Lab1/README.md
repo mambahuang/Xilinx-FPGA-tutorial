@@ -17,7 +17,7 @@
 在這個lab中，學習如何使用 UART 在 PC 和 PYNQ 之間進行通訊。PC 會透過 UART 傳送一張圖片到 PYNQ，PYNQ 會將原始圖片經過二值化處理後，最後再將轉換後的圖片傳回給 PC。  
 ![](png/picture.png)
 
-## Step 1 
+### Step 1 
 在這個 problem 中會用到 Teraterm 以及 HxD 兩個工具。
 
 下載連結:  
@@ -26,27 +26,27 @@ Teraterm  : https://teratermproject.github.io/index-en.html
 HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20  
 
 
-## Step 2
+### Step 2
 照著 Part1 的步驟完成 block design 並且建立 platform 、 Application。
 
-## Step 3 
+### Step 3 
 打開 Application > Source > lscript.ld  
 更改 Heap Size 的值。  
 
 ![](png/Heap.png)
 
 
-## Step 4  
+### Step 4  
 加入 src 檔案中的 main.c ， 自行完成剩餘部分。  
 
 ![](png/main.png)
 
-## Step 5
+### Step 5
 依序點選  
 Platform > Build   
 Application > Build > Run  
 
-## Step 6  利用 Tera Term 傳輸影像資料
+### Step 6  利用 Tera Term 傳輸影像資料
 開啟 Tera Term  ， 選擇 Serial 。  
 
 設定 Baud rate 。
@@ -59,5 +59,9 @@ Application > Build > Run
 ![](png/log_setup.png)
 
 
+### Step 7  開始傳輸資料
 
+File > Send file
+![](png/send_file.png)
+![](png/send.png)
 
