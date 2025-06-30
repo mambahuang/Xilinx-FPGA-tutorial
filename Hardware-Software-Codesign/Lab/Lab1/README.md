@@ -35,3 +35,7 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 ![](png/Heap.png)
 
+
+## Step 4  
+加入 src 檔案中的 main.c ， 自行完成剩餘部分。
+
