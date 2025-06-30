@@ -31,5 +31,6 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 ## Step 3 
 打開 Application > Source > lscript.ld  
-更改 Heap Size 的值。
+更改 Heap Size 的值。  
+![](png/Heap.png)
 
