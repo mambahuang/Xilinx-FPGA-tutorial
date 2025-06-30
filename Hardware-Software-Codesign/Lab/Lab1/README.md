@@ -41,4 +41,3 @@ HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 ![](png/main.png)
 
-> 💡 **備註：** Code 詳細註解可自行搜尋。
