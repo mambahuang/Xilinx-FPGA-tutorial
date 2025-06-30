@@ -22,6 +22,7 @@
 
 下載連結:
 Teraterm  : https://teratermproject.github.io/index-en.html
+
 HxD  : https://mh-nexus.de/en/downloads.php?product=HxD20
 
 
