@@ -39,25 +39,35 @@
 8.  接下來要依序對各個 GPIO 做不同的設定，需要對清楚名稱，若沒有照順序則需要修改 C code  
 
     -   **axi_gpio_0**:  
+
         ![axi_gpio_0](./png/GPIO_0.png)  
     
     -   **axi_gpio_1**:  
+
         ![axi_gpio_1](./png/GPIO_1.png)  
 
     -   **axi_gpio_2**:  
+
         ![axi_gpio_2_Custom](./png/GPIO_2_Custom.png)  
+        
         ![axi_gpio_2](./png/GPIO_2.png)  
         
     -   **axi_gpio_3**:  
+
         ![axi_gpio_3_Custom](./png/GPIO_3_Custom.png)  
+
         ![axi_gpio_3](./png/GPIO_3.png)    
     
     -   **axi_gpio_4**:  
+
         ![axi_gpio_4_Custom](./png/GPIO_4_Custom.png)  
+
         ![axi_gpio_4](./png/GPIO_4.png)  
 
     -   **axi_gpio_5**:  
+
         ![axi_gpio_5_Custom](./png/GPIO_5_Custom.png)  
+
         ![axi_gpio_5](./png/GPIO_5.png)  
 
 9.  調整 `Constant` 設定  
