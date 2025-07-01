@@ -21,7 +21,7 @@
 
 ## 參考 block design :
 
-![](png/block_design.png)
+![](png/Block_design.png)
 
 >📌 為什麼只用一個 GPIO IP ?  
 一個 AXI GPIO IP 有兩個 channels ，在此次的 Lab 中，只會用到一個 output 和一個 input，因此可只使用一個 GPIO IP 。 
