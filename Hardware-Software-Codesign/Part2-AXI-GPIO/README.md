@@ -48,3 +48,5 @@
     >
     >📌 What's MAC operation?  
     >MAC（Multiply-Accumulate）指的是「乘加運算」，例如 `a × b + c`，是數位濾波器、CNN 神經網路等運算核心，DSP Slice 專門針對此類運算設計。
+
+8.  
