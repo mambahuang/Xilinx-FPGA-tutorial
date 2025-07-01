@@ -171,7 +171,7 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 
 1.  將 PYNQ-z2 接上電腦並將開機配置成 `JTAG` (8號區 Jumper)  
 
-    ![PYNQ](./png/PYNQ.jpg)  
+    ![PYNQ](./png/PYNQ.png)  
 
 2.  開啟 `MobaXterm` 並選擇建立 `Serial` 連線，Baud Rate 設置成 `115200`， COM port 則根據你的 FPGA 連接在哪個 COM port 自己決定  
 
