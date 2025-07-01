@@ -190,3 +190,8 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 4.  即可在 `MobaXterm` 看到 "Hello World!" 的結果  
 
     ![Hello_World](./png/Hello_World.png)
+
+
+## Lab1 UART
+
+[Lab1-UART](../Lab/Lab1-UART/)
