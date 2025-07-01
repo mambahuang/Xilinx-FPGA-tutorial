@@ -5,6 +5,7 @@
 
 以 RGB led4 做為紅綠燈，並且在 terminal 上顯示目前的燈號以及剩餘秒數。  
 
+---
 每個燈號的維持時間由 sw0 來控制。  
 
 | sw0 | Green | Yellow | Red |
