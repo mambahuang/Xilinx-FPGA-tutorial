@@ -2,7 +2,7 @@
 
 使用 PYNQ-Z2 上的 Zynq Processor 操作簡單的 C/C++  Project。
 
-> 💡 **Hint：** Block design 可以參考 Part1 的設計即可。
+>💡 **Hint：** Block design 可以參考 Part1 的設計即可。
 
 ## Problem 1
 使用鍵盤輸入五個非負整數後，透過 PS 端 (軟體) 去將此數列由小到大排序。
