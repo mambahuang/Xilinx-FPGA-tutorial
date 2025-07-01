@@ -18,6 +18,8 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 
 -   開發者可以透過 **Vivado Block Design** 中的 **ZYNQ7 Processing System IP** 對 PS 做配置，例如選擇是否開啟 USB、Ethernet、UART、SD 卡等功能。
 
+## Purpose
+透過 Vivado 配置 `ZYNQ7 PS`，並建立 Vitis Project 達成簡易的 `UART` 顯示
 
 ## Part 1.1 Running a Basic UART Application on Zynq PS
 
