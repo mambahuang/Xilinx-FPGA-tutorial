@@ -42,14 +42,14 @@ Channel 2 作為 switch 的 2 bits input Channel。
 
 | Preview | R | G | B | Binary | Hex | Name       |
 |---------|---|---|---|--------|-----|------------|
-| <div style="width:30px;height:20px;background:#000"></div> | 0 | 0 | 0 | 000 | 0x0 | Black     |
-| <div style="width:30px;height:20px;background:#00F"></div> | 0 | 0 | 1 | 001 | 0x1 | Blue      |
-| <div style="width:30px;height:20px;background:#0F0"></div> | 0 | 1 | 0 | 010 | 0x2 | Green     |
-| <div style="width:30px;height:20px;background:#0FF"></div> | 0 | 1 | 1 | 011 | 0x3 | Cyan      |
-| <div style="width:30px;height:20px;background:#F00"></div> | 1 | 0 | 0 | 100 | 0x4 | Red       |
-| <div style="width:30px;height:20px;background:#F0F"></div> | 1 | 0 | 1 | 101 | 0x5 | Magenta   |
-| <div style="width:30px;height:20px;background:#FF0"></div> | 1 | 1 | 0 | 110 | 0x6 | Yellow    |
-| <div style="width:30px;height:20px;background:#FFF"></div> | 1 | 1 | 1 | 111 | 0x7 | White     |
+|⬛ | 0 | 0 | 0 | 000 | 0x0 | Black     |
+|🟦| 0 | 0 | 1 | 001 | 0x1 | Blue      |
+|🟩| 0 | 1 | 0 | 010 | 0x2 | Green     |
+|🟦🟩| 0 | 1 | 1 | 011 | 0x3 | Cyan      |
+|🟥| 1 | 0 | 0 | 100 | 0x4 | Red       |
+|🟥🟦| 1 | 0 | 1 | 101 | 0x5 | Magenta   |
+|🟨 | 1 | 1 | 0 | 110 | 0x6 | Yellow    |
+|⬜ | 1 | 1 | 1 | 111 | 0x7 | White     |
 
 
 ___
