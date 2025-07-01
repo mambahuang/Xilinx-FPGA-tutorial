@@ -53,7 +53,7 @@ ___
 
 ![main](png/main.png)
 
-> BMP 檔案簡介
+> BMP 檔案簡介  
     BMP（Bitmap Image File）是由 Microsoft 開發的點陣圖影像格式，副檔名為 `.bmp`。主要用於儲存靜態影像，常見於 Windows 系統。  
     特點  
     - 📁 **無壓縮格式**：圖像品質高，但檔案較大。  
