@@ -35,7 +35,8 @@
 
     ![Adder/Subtracter](./png/Adder_Subtracter.png)
 
-    >📌 Fabric / DSP ?
+    >📌 Fabric / DSP ?  
+    >在設定`Adder/Subtracter`的設定時可以看到最上面有一個 `implement using` 的選項，在 FPGA 上面，運算邏輯通常會透過 `LUT` 和 `DSP` 的方式下去實作。  
     >
     >Fabric：使用 FPGA 中的 Lookup Table (LUT) 與邏輯閘來實現加減法邏輯。  
     >-   適合位元數較少（如 8 或 16-bit）的基本加減法運算  
@@ -46,5 +47,4 @@
     >-  高效能、高吞吐，常用於影像處理、機器學習中的 `MAC` 運算  
     >
     >📌 What's MAC operation?  
-    >
     >MAC（Multiply-Accumulate）指的是「乘加運算」，例如 `a × b + c`，是數位濾波器、CNN 神經網路等運算核心，DSP Slice 專門針對此類運算設計。
