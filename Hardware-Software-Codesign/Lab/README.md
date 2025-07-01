@@ -1,3 +1,5 @@
-# FPGA Design Lab
+# Hardware-Software-Codesign-Lab
 
-### 提供簡單的範例以及練習題
+## 🛠️ 推薦實作順序
+
+[Lab1-UART](./Lab1-UART/)
