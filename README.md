@@ -10,4 +10,5 @@
 3.  [/Hardware-Software-Codesign](./Hardware-Software-Codesign/)：使用 Vitis 或 PYNQ Python 系統進行軟硬體協同設計的應用實作與控制教學  
   
 **FPGA Board**：TUL PYNQ-Z2 / xc7z020clg400-1  
+![PYNQ-Z2.jpg](https://www.tulembedded.com/FPGA/images/01_PYNQ-Z2_S.jpg)
 **建議版本**：Vivado 2023.2 、 Vitis 2023.2 / PYNQ 3.0.1  
