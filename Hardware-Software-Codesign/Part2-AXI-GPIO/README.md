@@ -3,7 +3,13 @@
 本章將介紹如何使用 AXI GPIO (General Purpose Input/Output) IP，透過軟體程式控制板子上的 Switch 與 LED，並進一步將資料寫入 GPIO 作為控制訊號，驅動硬體電路（如 Adder/Subtracter）。
 
 ## Purpose  
-透過
+透過本章節的實作，學習如何使用 AXI GPIO IP 與 Processing System (PS) 進行互動，並透過軟體程式：
+
+-   控制 GPIO 輸出，例如點亮 LED 或傳送控制訊號至硬體模組（Adder/Subtracter）
+
+-   讀取 GPIO 輸入，例如從 Switch 或其他感測裝置獲取訊號
+
+-   實作一個簡單的可控制加減法運算電路，並可透過 UART 互動式控制與結果顯示
 
 ## Part 2.1 Vivado Block Design
 
@@ -157,4 +163,23 @@
 
     ![Run_On_Pynq](./png/Run_On_Pynq.png)  
 
->   📌 GPIO不需要設定 Constraint?  
+>   📌 透過 AXI GPIO IP Block 來存取硬體上的 Switch 和 LED 等板子上的硬體時，通常不需要自己手動設定 Constraint，Vivado會自動幫你生成其對應的 `Physical Constraint`  
+ 
+```xdc
+e.g.:project\project.gen\sources_1\bd\design_1\ip\design_1_axi_gpio_0_0  
+
+#--------------------Physical Constraints-----------------
+
+set_property BOARD_PART_PIN {sws_2bits_tri_i_0} [get_ports gpio_io_i[0]]
+
+set_property BOARD_PART_PIN {sws_2bits_tri_i_1} [get_ports gpio_io_i[1]]
+
+```
+
+## Additional  
+
+[Extra1-Vitis-Change-xsa](../Extra1-Vitis-Change-xsa/)
+
+## Lab2 AXI-GPIO
+
+[Lab2-AXI-GPIO](../Lab/Lab2-AXI-GPIO/)
