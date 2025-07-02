@@ -1,4 +1,4 @@
-# FPGA Design Lab3
+# FPGA Design Lab5
 
 在本次 Lab 中，將結合 Xilinx 提供的 IP 與自行設計的 IP，建立一個完成加法運算的系統。
 
@@ -19,7 +19,7 @@
 在 ZYNQ Processing System 上需要多加入一個 slave port 給 CDMA 使用。
 
 點選   
-` ZYNQ7 Processing System IP > PS-PL Configuration > HP Slave AXI Interface >  S AXI HP0 interfate `✅
+` ZYNQ7 Processing System IP > PS-PL Configuration > HP Slave AXI Interface >  S AXI HP0 interfate `
 
 ![](png/PS_HP0.png)
 
@@ -27,9 +27,7 @@
 ---  
 
 Block design 的 address Editor可自行設定。  
-> 📌 特別注意/processing_system7_0/S_AXI_HP0 的 slave segment。  
-配置任何 master 的 address 必須完全落在 0x00000000 到 0x1FFFFFFF 這個範圍內。
- 同時也要對齊（比如 1MB 對齊，32-bit 對齊等）。
+> 📌 Note: Zynq7020 架構中，記憶體位址區間 0x0000_0000 ~ 0x1FFF_FFFF 為`PS` 的專用空間，因此，在 Vivado 的 Address Editor 中，一般 PL 側的 AXI IP（如 BRAM、GPIO、AXI-Lite Slave 等）不可將其記憶體映射到此區間，否則可能會造成與 PS 的記憶體空間衝突，若是使用像 AXI DMA 或 CDMA，它們可以合法地存取此記憶體區段，但前提是要透過 Zynq 的 High Performance (HP) Port 與 DDR 做連接。
 
 ![](png/address.png)
 
