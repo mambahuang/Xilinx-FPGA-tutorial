@@ -157,4 +157,19 @@
 
     ![Run_On_Pynq](./png/Run_On_Pynq.png)  
 
->   📌 GPIO不需要設定 Constraint?  
+>   📌 透過 AXI GPIO IP Block 來存取硬體上的 Switch 和 LED 等板子上的硬體時，通常不需要自己手動設定 Constraint，Vivado會自動幫你生成其對應的 `Physical Constraint`  
+ 
+```xdc
+e.g.:project\project.gen\sources_1\bd\design_1\ip\design_1_axi_gpio_0_0  
+
+#--------------------Physical Constraints-----------------
+
+set_property BOARD_PART_PIN {sws_2bits_tri_i_0} [get_ports gpio_io_i[0]]
+
+set_property BOARD_PART_PIN {sws_2bits_tri_i_1} [get_ports gpio_io_i[1]]
+
+```
+
+## Lab2 AXI-GPIO
+
+[Lab2-AXI-GPIO](../Lab/Lab2-AXI-GPIO/)
