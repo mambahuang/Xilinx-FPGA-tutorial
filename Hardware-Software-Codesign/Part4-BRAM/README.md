@@ -161,6 +161,13 @@ BRAM 的 `Depth` 不再由 `Block Memory Generator IP` 的介面設定，而是�
 
 13. `Create HDL Wrapper` -> `Generate Bitstream` -> `Export .xsa`
 
+>   📌 雖然 AXI BRAM Controller IP 可以連接兩組 BRAM 接口（Port A 與 Port B），但整個 IP 在 AXI 系統中，只會對應到一個 AXI Address Range，所以我們不能透過一顆 `AXI BRAM Controller` 去控制兩塊 `Block Memory Generator`
+
+>   📌 在設計 TDP（True Dual Port）BRAM 時，常見的作法是：  
+>   -   一個 Port（如 Port A）用來連接 AXI BRAM Controller，由 處理器（如 MicroBlaze 或 ARM）端控制
+>
+>   -   另一個 Port（如 Port B）則直接連接到 自訂的 RTL 硬體模組
+
 ## Part 4.4 Vitis Project
 
 1.  照 `Part1` 的方式創立一個 Vitis Project  
