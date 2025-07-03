@@ -133,7 +133,7 @@
 
     ![Application_Project](./png/Application_Project.png)  
 
-4.  將 `Application Project` 內的 `main.c` 替換成該次Lab裡面的`src/main.c`  
+4.  將 `Application Project` 內的 `hello_world.c` 替換成該次Lab裡面的`src/main.c`  
 
     ![Main_Change](./png/Main_Change.png)  
 

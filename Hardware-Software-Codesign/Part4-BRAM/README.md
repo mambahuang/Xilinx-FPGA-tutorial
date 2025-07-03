@@ -114,3 +114,81 @@ BRAM 的 `Depth` 不再由 `Block Memory Generator IP` 的介面設定，而是�
 **Standalone BRAM 請自行練習設計**，Standalone BRAM 使用上跟 ASIC Design的SRAM類似
 
 ## Part 4.3 BRAM Controller
+
+1.  Create a New Vivado Project and Create a New Block Design
+
+2.  加入 `ZYNQ7 Processing System`，並點選上方的 `Run Block Automation `
+
+3.  將 `ZYNQ7 Processing System` 設定中的 `Peripheral I/O Pins`，全部取消並只勾選 `UART0`
+
+    ![Peripheral_Setting](./png/Peripheral_Setting.png)
+
+4.  加入 `AXI BRAM Controller`
+
+    ![AXI_BRAM_Controller](./png/AXI_BRAM_Controller.png)
+
+5.  點選左側選單 `Project Manager ->  Add Sources`，加入 `HDL/mul16.v`
+
+    ![Add_Mul](./png/Add_Mul.png)
+
+6.  將 `mul16.v` 加入 Block Design，可對 `mul16.v` 點右鍵按 `Add Module to Block Design` 或 直接拖曳到右邊的 Block Design  
+
+    ![Mul_Block_Design](./png/Mul_Block_Design.png)  
+
+7.  未連線前應該如下圖所示  
+
+    ![Block_Design_Not_Connect](./png/Block_Design_Not_Connect.png)
+
+8.  點選上方 `Run Connection Automation`，除了 BRAM_PORTB 之外都勾選
+
+    ![Run_Connection](./png/Run_Connection.png)
+
+9.  將 `Block Memory Generator` 設定成 TDP (True Dual Port)
+
+    ![TDP](./png/TDP.png)
+
+10. 將 `mul16` 接到 `Block Memory Generator`，必須手動一個一個接，其中`rstb` 為正緣觸發，必須接在 Process System Reset 的 `peripheral_reset` 上
+
+    ![Mul_Connect_BRAM](./png/Mul_Connect_BRAM.png)
+
+11. 將 `AXI BRAM Controller` 設定中，`Number of BRAM interfaces` 設定成 1  
+
+    ![AXI_BRAM_Controller_Num](./png/AXI_BRAM_Controller_Num.png)
+
+12. 電路設計完成圖  
+
+    ![Final_Block](./png/Final_Block.png)
+
+13. `Create HDL Wrapper` -> `Generate Bitstream` -> `Export .xsa`
+
+## Part 4.4 Vitis Project
+
+1.  照 `Part1` 的方式創立一個 Vitis Project  
+
+2.  使用 Part4.3 產生的 `.xsa` 檔案，創建 `Platform Component`  
+
+3.  一樣使用 `Example Design` 裡面的 `Hello_World` 作為初始的 `Application Project`
+
+4.  將 `Application Project` 內的 `hello_world.c` 替換成該次Lab裡面的`src/main.c`
+
+5.  先 `build platform`
+
+6.  再 `build application`
+
+7.  連接上 PYNQ 板
+
+8.  打開 `MobaXterm` Serial 方式連接上 PYNQ
+
+9.  點選`Run`
+
+## Part 4.5 Run & Result
+
+-   將兩筆資料（60 和 20）寫入 BRAM 的特定位址
+
+-   讓硬體邏輯（mul16 模組）自動讀取這兩筆資料、進行乘法
+
+-   從 BRAM 的結果位址讀回硬體計算出來的乘積（應為 1200）
+
+-   透過 UART 印出這些操作的過程與結果
+
+![MobaXterm](./png/MobaXterm.png)
