@@ -180,6 +180,8 @@ set_property BOARD_PART_PIN {sws_2bits_tri_i_1} [get_ports gpio_io_i[1]]
 
 [Extra1-Vitis-Change-xsa](../Extra1-Vitis-Change-xsa/)
 
+[Extra2-AXI-Mapping](../Extra2-AXI-Mapping/)
+
 ## Lab2 AXI-GPIO
 
 [Lab2-AXI-GPIO](../Lab/Lab2-AXI-GPIO/)
