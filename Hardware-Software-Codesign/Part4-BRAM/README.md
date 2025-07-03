@@ -111,7 +111,7 @@ BRAM 的 `Depth` 不再由 `Block Memory Generator IP` 的介面設定，而是�
 ## Part 4.2 Standalone BRAM
 在進行純硬體設計（Pure RTL or Block Design without Processor）的情境下，BRAM 是我們在 FPGA 裡最常用來儲存大量資料的元件。
 
-**Standalone BRAM 請自行練習設計**，Standalone BRAM 使用上跟 ASIC Design的SRAM類似
+**Standalone BRAM 請自行練習設計**，Standalone BRAM 使用上跟 ASIC Design 的 SRAM 類似
 
 ## Part 4.3 BRAM Controller
 
