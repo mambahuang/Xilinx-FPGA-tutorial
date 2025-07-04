@@ -33,7 +33,7 @@
     純硬體 Design 時，PYNQ-Z2 的主要 Clock 輸入為 125 MHz，腳位為 H16
     你可以將 **sysclk** 改成 RTL 中的 port 名稱（e.g. clk）。
 
-    軟硬體 Codesign 時， Clock 通常都會使用到 Zynq Processing System (PS) 匯出的 FCLK，此時則不需要再使用 **set_property** ，來指定Clock腳位，但仍需自行在 .xdc 中加入 create_clock 約束，提供 Vivado 正確的時序資訊。
+    軟硬體 Codesign 時， Clock 通常都會使用到 Zynq Processing System (PS) 匯出的 FCLK，此時則不需要再使用 **set_property** ，來指定Clock腳位，create_clock 約束 Vivado 也會自動幫你生成。
 
     ### 2.  Switches
     ```xdc
