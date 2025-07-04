@@ -133,7 +133,7 @@
 
     ![Application_Project](./png/Application_Project.png)  
 
-4.  將 `Application Project` 內的 `main.c` 替換成該次Lab裡面的`src/main.c`  
+4.  將 `Application Project` 內的 `hello_world.c` 替換成該次Lab裡面的`src/main.c`  
 
     ![Main_Change](./png/Main_Change.png)  
 
@@ -179,6 +179,8 @@ set_property BOARD_PART_PIN {sws_2bits_tri_i_1} [get_ports gpio_io_i[1]]
 ## Additional  
 
 [Extra1-Vitis-Change-xsa](../Extra1-Vitis-Change-xsa/)
+
+[Extra2-AXI-Mapping](../Extra2-AXI-Mapping/)
 
 ## Lab2 AXI-GPIO
 

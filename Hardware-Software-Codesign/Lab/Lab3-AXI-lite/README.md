@@ -1,4 +1,4 @@
-# FPGA Design Lab
+# FPGA Design Lab3
 
 與 Lab1-UART Problem 1 相似，但請改用 Verilog 設計一個 Sorting 電路，打包成 AXI IP 後，使用 block design 的方式來完成此 Lab 。 
 

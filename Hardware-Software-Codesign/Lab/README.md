@@ -5,3 +5,7 @@
 [Lab1-UART](./Lab1-UART/)
 
 [Lab2-AXI-GPIO](./Lab2-AXI-GPIO/)
+
+[Lab3-AXI-lite](./Lab3-AXI-lite/)
+
+[Lab4-BRAM](./Lab4-BRAM/)
