@@ -43,7 +43,7 @@ Range設定這邊需使用4K。
 ![](png/address.png)
 
 根據 `address path diagram `可以看到，分配給AXIBram Controller 的
-0x4000_0000~0x4000_0FFF 經過 AXI Smart Connect 後就會變成 0x0~0xFFF，給後續32Kb(4KB)的BRAM做使用。
+0x4000_0000 - 0x4000_0FFF 經過 AXI Smart Connect 後就會變成 0x0 - 0xFFF，給後續32Kb(4KB)的BRAM做使用。
 
 ![](png/address_path_diagram.png)
 
