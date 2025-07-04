@@ -1,4 +1,4 @@
-# FPGA Design Lab
+# FPGA Design Lab6
 
 在本次 Lab 中，將結合 Xilinx 提供的 IP 與自行設計的 IP，建立一個完成加法運算的系統。
 
