@@ -18,6 +18,8 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 
 -   開發者可以透過 **Vivado Block Design** 中的 **ZYNQ7 Processing System IP** 對 PS 做配置，例如選擇是否開啟 USB、Ethernet、UART、SD 卡等功能。
 
+## Purpose
+透過 Vivado 配置 `ZYNQ7 PS`，並建立 Vitis Project 達成簡易的 `UART` 顯示
 
 ## Part 1.1 Running a Basic UART Application on Zynq PS
 
@@ -171,7 +173,7 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 
 1.  將 PYNQ-z2 接上電腦並將開機配置成 `JTAG` (8號區 Jumper)  
 
-    ![PYNQ](./png/PYNQ.jpg)  
+    ![PYNQ](./png/PYNQ.png)  
 
 2.  開啟 `MobaXterm` 並選擇建立 `Serial` 連線，Baud Rate 設置成 `115200`， COM port 則根據你的 FPGA 連接在哪個 COM port 自己決定  
 
@@ -188,3 +190,8 @@ Zynq 不僅是一顆 FPGA，它還內建了完整的處理系統，包括：
 4.  即可在 `MobaXterm` 看到 "Hello World!" 的結果  
 
     ![Hello_World](./png/Hello_World.png)
+
+
+## Lab1 UART
+
+[Lab1-UART](../Lab/Lab1-UART/)

@@ -38,3 +38,13 @@ PYNQ 透過 Python 封裝與 Jupyter Notebook 介面，極大化簡化了傳統�
 ![PYNQ_2](./png/PYNQ_2.png)
 
 ## 📘 推薦閱讀順序  
+
+1. [Part1-Zynq-Processor](./Part1-Zynq-Processor/)
+2. [Part2-AXI-GPIO](./Part2-AXI-GPIO/)
+3. [Extra1-Vitis-Change-xsa](./Extra1-Vitis-Change-xsa/)
+4. [Part3-AXI-Lite(未完)](./Part3-AXI-Lite/)
+5. [Extra2-AXI-Mapping(未完)](./Extra2-AXI-Mapping/)
+6. [Part4-BRAM](./Part4-BRAM/)
+7. [Part5-DSP(未完)](./Part5-DSP/)
+8. [Part6-PYNQ-Jupyter-Notebook](./Part6-PYNQ-Jupyter-Notebook/)
+9. [Part7-CDMA(未完)](./Part7-CDMA/)
