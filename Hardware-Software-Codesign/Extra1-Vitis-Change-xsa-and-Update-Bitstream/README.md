@@ -37,3 +37,8 @@
     ${workspace}/platform/hw/sdt/system_wrapper.bit
     ```
 5.  Build Application
+
+>📌 Note：  
+>Switch XSA 僅更新 platform metadata，bitstream 不會自動覆蓋
+>
+>若沒有手動複製或指定 .bit 檔，Application 仍會使用舊版本，導致執行結果錯誤
