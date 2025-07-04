@@ -14,29 +14,24 @@ Xilinx 的設計流程可以分為以下主要階段：
 
     > 📌 **Note：FPGA 與 ASIC Synthesis 差異**  
     >  
-    > 雖然兩者皆從 RTL（Verilog/VHDL）出發進行合成，但目標資源不同，導致合成結果與工具參數有以下差異：  
+    > 雖然兩者皆從 RTL（Verilog/VHDL）進行合成，但目標資源不同，導致合成結果與工具參數有以下差異：  
     >  
     > - **FPGA Synthesis**：  
     >   - 目標為 FPGA 元件，如 `LUT`、`FF`、`BRAM`、`DSP` 等  
-    >   - 使用工具如 Vivado、Quartus  
-    >   - 合成結果會映射至 **FPGA** 上面真實存在的實體邏輯資源  
+    >   - 合成結果會映射至 FPGA 上面真實存在的實體邏輯資源  
     >  
     > - **ASIC Synthesis**：  
     >   - 目標為 standard cell library，如 AND2_X1、DFF_X1 等  
-    >   - 使用工具如 Design Compiler 
     >   - 產出 gate-level netlist 與 SDF 延遲檔，供 Place & Route (P&R) 與 Gate-level simulation 使用  
     
-
-
 4.  **Implementation**  
-    包含 Placement 與 Routing 兩個階段，將合成後的邏輯元件實際配置到 FPGA 的物理資源上，  
-    如 CLB、Routing Channel、IO Bank 等。此階段會根據時序需求與佈局限制，進行最佳化配置。  
+    包含 Placement 與 Routing 兩個階段，將合成後的邏輯元件實際配置到 FPGA 的物理資源上，如 CLB、Routing Channel、IO Bank 等。此階段會根據時序需求與佈局限制，進行最佳化配置。  
 
     > 📌 實務上，Vivado 在 Implementation 階段會執行以下步驟：   
-    > - **Place Design**：將邏輯元件放置到 FPGA 上的具體位置（CLB 位置）  
+    > - **Place Design**：將邏輯元件放置到 FPGA 上的具體位置    
     > - **Route Design**：完成所有訊號間連線並考量時序需求  
     >
-    > **Implementation 成功後，Vivado 會執行 Timing Summary 報告，檢查是否滿足時序要求（Setup / Hold）。**
+    > **Implementation 成功後，Vivado 會提供 Timing Summary 報告，檢查是否滿足時序要求（Setup / Hold）。**
 
 5.  **Generate Bitstream**  
     產生可供下載的 `.bit` 檔，燒錄進 FPGA。
@@ -55,33 +50,20 @@ Xilinx 的設計流程可以分為以下主要階段：
 
     ![File_Hierarchy](./png/File_Hierarchy.png)  
 
-> 📌 **Note: Constraint 是做什麼用的？**  
+>   📌 **Note: Constraint 是做什麼用的？**  
+>   在 FPGA 設計中，Constraint 檔案通常使用 `.xdc` 格式，它的作用是補充 RTL 中無法描述的「物理實作條件」，主要包括：  
 >
-> 在 FPGA 設計中，Constraint 檔案通常使用 `.xdc` 格式，  
-> 它的作用是補充 RTL 中無法描述的「物理實作條件」，主要包括：
+>   - **Clock Constraints**：告訴 Vivado 時脈的頻率與來源，例如 `create_clock`
+>   - **I/O Pin Assignment**：定義實體腳位對應的 signal，例如將 `clk` 對應到 `W5`
+>   - **I/O Standards**：設定電壓與訊號標準，如 `LVCMOS33`
 >
-> - **時脈定義（Clock Constraints）**：告訴 Vivado 時脈的頻率與來源，例如 `create_clock`
-> - **I/O 腳位綁定（Pin Assignment）**：定義實體腳位對應的 signal，例如將 `clk` 對應到 `W5`
-> - **I/O 標準（I/O Standards）**：設定電壓與訊號標準，如 `LVCMOS33`
+>   Constraint 是 **Implementation** 階段中「時序分析、資源配置」的重要依據。  
+>   若沒有正確的 `.xdc`，Vivado 可能無法正確進行佈線，造成 Timing Violation 等問題。
 >
-> Constraint 是 **Implementation** 階段中「時序分析、資源配置」的重要依據。  
-> 若沒有正確的 `.xdc`，Vivado 可能無法正確進行佈線，或產生有效的 Bitstream。  
->>
->📌 Note: **Constraint Set**  
->Vivado 支援使用 Constraint Set 來管理多組時序與 I/O 限制設定，例如不同的設計階段或測試情境。  
+>   📌 **Note: Constraint Set**  
+>   Vivado 支援使用 Constraint Set 來管理多組時序與 I/O 限制設定，例如不同的設計階段或測試情境。  
 >
->未來在面對大型設計時，可以根據不同模組或需求建立對應的 Constraint Set，方便進行模組化驗證與切換設計條件。
->
-> 📌 **延伸補充：Constraint 類似於 ASIC 設計中的 `.sdc` 或 `.sdf`**  
->
-> 如果你熟悉 ASIC 流程，Vivado 中的 `.xdc`（Xilinx Design Constraints）在概念上  
-> 很類似 Design Compiler 中的 `.sdc`（Synopsys Design Constraints）與 `.sdf`（Standard Delay Format）：
->
-> - `.xdc` ≈ `.sdc`：用來定義時脈、I/O 延遲、Pin Mapping 等設計約束  
-> - `.xdc` 不等同 `.sdf`，但其 Clock Constraint 可視為 SDF 延遲分析的前置依據  
->
-> 在 FPGA 流程中，Vivado 直接根據 `.xdc` 執行時序分析與實體資源配置（Place & Route）。
-
+>   未來在面對大型設計時，可以根據不同模組或需求建立對應的 Constraint Set，方便進行模組化驗證與切換設計條件。
 
 ## Part 3.2 Synthesis
 1.  點選左側 **SYNTHESIS → Run Synthesis**，開始進行 RTL 合成流程。
@@ -132,19 +114,17 @@ Xilinx 的設計流程可以分為以下主要階段：
 
         ![LUT6](./png/LUT6.png)
 
-        LUT6 是一種可編程邏輯單元，具有 6 個輸入，可以實現任何 6-input 的布林函數。
+        LUT6 是一種可編程邏輯單元，具有 6 個輸入，可以實現任何 6-input 的布林函數。  
 
-        Vivado 會自動將 RTL 中的邏輯運算映射為 LUT。
+        Vivado 會自動將 RTL 中的邏輯運算映射為 LUT。  
 
-        LUT 是組成 FPGA 設計邏輯的核心之一。
+        LUT 是組成 FPGA 設計邏輯的核心之一。  
 
     - **FDCE**（Flip-Flop with D input, Clock, Clear, Enable）  
     
         ![FDCE](./png/FDCE.png)
         
-        是一種帶有清除（Clear）與使能（Enable）訊號的 D 型正緣觸發器。
-
-        通常用來實作暫存器，儲存狀態或同步資料。  
+        一種帶有 Clear 與 Enable 訊號的 D 型正緣 Flip Flop。   
 
 4.  點選左側上方 **Project Manager** 後跳出的 **Project Summary** 可以看到Utilization的結果，其餘的則要等到 **Implementation** 後才能看到  
 
