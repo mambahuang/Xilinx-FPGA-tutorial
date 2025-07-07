@@ -100,6 +100,3 @@ platform 完成後，圖如下
 回到 Vitis，選擇 application，並執行下方的 Run，即可在 PuTTY 看到 "Hello World!" 的結果
 ![application_run_24](./png/application_run_24.jpg)
 
-## Introduction to AXI Interface
-### AXI Lite
-
