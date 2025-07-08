@@ -9,9 +9,3 @@
 [Lab3-AXI-lite](./Lab3-AXI-lite/)
 
 [Lab4-BRAM](./Lab4-BRAM/)
-
-[Lab5-DSP](./Lab5-DSP/)
-
-[Lab6-CDMA](./Lab6-CDMA/)
-
-[Lab7-Convolution-system](./Lab7-Convolution-system/)
