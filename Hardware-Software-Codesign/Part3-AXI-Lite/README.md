@@ -5,4 +5,6 @@
 
 ![AXI_Lite](./png/AXI_Lite.png)
 
-## Part3.1
+## Part3.1 Create AXI-Lite IP
+1.  Create a new Vivado project
+2.  
