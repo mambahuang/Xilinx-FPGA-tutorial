@@ -164,3 +164,14 @@
 ## step 23
 
 開啟 `Jupyter notebook`
+
+
+# Reference
+
+https://github.com/Xinyang-ZHANG/PYNQ-Z2/blob/main
+
+[Xilinx Video Series and Blog Posts](https://adaptivesupport.amd.com/s/question/0D52E00006hpsS0SAI/xilinx-video-series-and-blog-posts?language=en_US)
+
+[Video Series 23: Generate a video output on Pynq-Z2 HDMI out](https://adaptivesupport.amd.com/s/article/932553?language=zh_CN)
+
+[Video Series 24: Using the AXI VDMA in Triple Buffer Mode](https://adaptivesupport.amd.com/s/article/938327?language=zh_CN)
