@@ -31,7 +31,7 @@
 
 ![](png/tcl.png)
 
-詳細 project 介紹請看 [Extra-Lab-Convolution-system](./Extra-Lab-Convolution-system/) 。
+詳細 project 介紹請看 [Extra-Lab-Convolution-system](../Extra-Lab-Convolution-system/) 。
 
 
 ## Step 2 
@@ -48,7 +48,9 @@
 
 與 Problem1 相似 ，但每筆資料與 Kernel 皆為 `32-bit`。
 
-`.tcl `可使用 [Extra-Lab-Convolution-system](./Extra-Lab-Convolution-system/) 中的範例。
+`.tcl `可使用 [Extra-Lab-Convolution-system](../Extra-Lab-Convolution-system/) 中的範例。
+
+
 
 ### 怎麼用 DSP48E 的 Cascade 方式完成「大位數乘法」?
 
