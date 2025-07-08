@@ -105,7 +105,7 @@
 
 加入`Concat`
 
-![concat](./PNG/concat.png)
+![concat](./PNG/Concat.png)
 
 ## Step 14
 
