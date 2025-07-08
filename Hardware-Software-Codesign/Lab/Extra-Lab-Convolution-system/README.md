@@ -1,4 +1,4 @@
-# FPGA Design Lab7
+# FPGA Design Lab
 
 
 在這次的 Lab 中需自行設計一個可執行 convolution 運算的 IP，並以此 IP 建構整個系統。依據提供的 input.hex 以及 golden.hex來進行輸出結果比對。
