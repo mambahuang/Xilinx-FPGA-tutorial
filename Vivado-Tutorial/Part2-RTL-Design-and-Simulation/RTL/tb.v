@@ -6,7 +6,7 @@ module tb ();
     reg [7:0] b;
     //Output
     wire [7:0] c;
-    
+
     adder adder_i   (
         .clk(clk),
         .rst(rst),
@@ -14,7 +14,7 @@ module tb ();
         .b(b),
         .c(c)
     );
-    
+
     initial begin
         //Initialize
         clk = 0;
@@ -32,6 +32,7 @@ module tb ();
         a = 8;
         b = 17;
     end
-    
+
     always #5 clk = ~clk ;
-endmodule 
+
+endmodule
