@@ -14,7 +14,7 @@
 開啟 vivado project 後，點擊左側 `setting` > `IP` > `Repository`  > `+`
 加入兩個 IP 。
 
-![IP](./png/IP.png)
+![IP](./PNG/IP.png)
 
 
 ## Step 3
@@ -23,11 +23,11 @@
 
 點選 ZYNQ7 Processing System IP 後，選擇 `PS-PL Configuration` > `HP Slave AXI interface` 將 ` HP0 `打勾，在 `PS` 端開啟 slave port` 給 `VDMA` 使用。
 
-![ZYNQ-PS](./png/ZYNQ-PS.png)
+![ZYNQ-PS](./PNG/ZYNQ-PS.png)
 
 選擇 `interrupt` > `Fabric Interrupts` > `PL-PS Interrupt Ports` 將 `IPQ_F2P` 打勾。
 
-![Interrupt](./png/Interrupt.png)
+![Interrupt](./PNG/Interrupt.png)
 
 
 ## Step 4
@@ -45,7 +45,7 @@
 
 `Stream Data Width` 調到 24
 
-![VDMA](./png/VDMA.png)
+![VDMA](./PNG/VDMA.png)
 
 
 ## Step 6
@@ -54,25 +54,25 @@
 
 `Detection/Generation` 取消 `Include AXI4-Lite Interface` 和 `Enable Detection`
 
-![video_timing_controller](./png/video_timing_controller.png)
+![video_timing_controller](./PNG/video_timing_controller.png)
 
 `Default/Constant` > `Video Mode` 選 `720P`
 
-![720P](./png/720P.png)
+![720P](./PNG/720P.png)
 
 
 ## Step 7
 
 點擊 `RGB to DVI Video Encoder` > 取消 `Reset active high` 並選取 `720P`
 
-![RGB_to_DVI](./png/RGB_to_DVI.png)
+![RGB_to_DVI](./PNG/RGB_to_DVI.png)
 
 
 ## Step 8
 
 點選 `RGB to DVI Video Encoder` IP， `output port` `TMDS` 的 `+` 展開所有的 `output port` ，選取全部後點右鍵 `make External` 。
 
-![External_port](./png/External_port.png)
+![External_port](./PNG/External_port.png)
 `
 ## Step 9
 
@@ -89,7 +89,7 @@
 
 點擊 `Clocking Wizard` > `Output Clocks` > `Requested` 調為 `71.5` ，往下滑後，取消 `reset` ,`locked`
 
-![clk](./png/clk.png)
+![clk](./PNG/clk.png)
 
 ## Step 12
 
@@ -105,7 +105,7 @@
 
 加入`Concat`
 
-![concat](./png/concat.png)
+![concat](./PNG/concat.png)
 
 ## Step 14
 
@@ -116,7 +116,7 @@
 3. `xlconcat_0: dout` -> `axi_intc_0: intr`
 4. `axi_intc_0: interrupt 點開 irq` -> `PS Block: IRQ_F2P`
 
-![step14](./png/step14.png)
+![step14](./PNG/step14.png)
 
 ## Step 15
 
@@ -127,7 +127,7 @@
 
 加入 `Constant` 且 `Const Val` 設為 1
 
-![constant](./png/constant.png)
+![constant](./PNG/constant.png)
 
 ## Step 17
 
@@ -135,7 +135,7 @@
 `xlconstant_0: dout` -> `v_tc_0: clken,resetn`
 `xlconstant_0: dout` -> `v_axi4s_vid_out_0: aclken,aresetn,vid_io_out_ce`
 
-![step17](./png/step17.png)
+![step17](./PNG/step17.png)
 
 
 ## Step 18
@@ -146,7 +146,7 @@
 
 恭喜完成了 `block design` 。
 
-![block_design](./png/block_design.png)
+![block_design](./PNG/block_design.png)
 
 ## Step 20
 
