@@ -98,7 +98,26 @@
 
 17. Create HDL Wrapper and Generate Bitstream
 
-18. Export `.xsa`
+18. Export `.xsa` (include bitstream)
 
 ## Part3.2 Vitis Project
 
+1. 開啟 Vitis 建立 workspace 資料夾，並使用剛剛 Export 出來的 `*.xsa` 建立 Platform Component
+
+2. 透過 Example Project中的 `Hello World` 建立新的 Application Project 加入檔案 `src/main.c` 以及 `Driver/*` 內的程式複製到下圖紅色部分
+
+    ![Vitis_File](./png/Vitis_File.png)
+
+    > 此次教學 Driver 為寫好的版本，若之後包裝其他 AXI IP 需要撰寫 Driver 可至該 IP 的資料夾，內部有該 IP 的 Driver Code 可修改
+    >
+    > ![Driver](./png/Driver.png)
+
+3. 修改 platform 中的三個 makefile:
+    - platform/Sources/hw/sdt/drivers/<CustomIP_name>/src/Makefile
+    - platform/Sources/ps7_cortex_a9_0/standalone_domain/bsp/hw_artifacts/drivers/<CustomIP_name>/src/Makefile
+    - platform/Sources/zynq_fsbl/zynq_fsbl_bsp/hw_artifacts/<CustomIP_name>/src/Makefile  
+
+    將makefile中的 `OUTS = *.o` 修改為 `OUTS=$(addsuffix .o, $(basename $(wildcard *.c)))`
+4. Vitis 需要的是 `ps7_init.tcl`，然而自製 IP 也有屬於自己的 `tcl`，因此需要到 `Settings\launch.json` 的 `Initialization file` 修正
+
+    ![Initialization](./png/Inititalization.png)
