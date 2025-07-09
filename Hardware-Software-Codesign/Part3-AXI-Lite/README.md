@@ -97,3 +97,8 @@
     ![Address_Editor](./png/Address_Editor.png)
 
 17. Create HDL Wrapper and Generate Bitstream
+
+18. Export `.xsa`
+
+## Part3.2 Vitis Project
+
