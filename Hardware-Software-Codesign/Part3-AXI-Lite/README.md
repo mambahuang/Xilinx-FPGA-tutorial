@@ -71,34 +71,38 @@
 
     只有當兩邊同時為 1 時，傳輸才會被執行
 
-10. HDL code 修改完後，回到 package IP 畫面將沒有打勾的部分點進去修改，最後 Package IP。
+10. 點開你的 IP repo 資料夾，找到 Adder IP 的 `driver -> your_IP_name -> src` 資料夾，將內部的 `makefile` 替換成 `Driver/makefile`
+
+    ![Makefile_Add](./png/Makefile_Add.png)
+
+11. 回到 package IP 畫面將沒有打勾的部分點進去修改，最後 Package IP。
 
     ![IP_Package](./png/IP_Package.png)
 
-11. 回到原來的 Project 將剛剛包裝好的 IP 加入進來
+12. 回到原來的 Project 將剛剛包裝好的 IP 加入進來
     ![Add_IP_repo](./png/Add_IP_repo.png)
 
-12. Create Block Design
+13. Create Block Design
 
-13. 加入 `ZYNQ7 PS` 和 `adder_v1.0`，並完成下方接線 (基本上自動連接即可)
+14. 加入 `ZYNQ7 PS` 和 `adder_v1.0`，並完成下方接線 (基本上自動連接即可)
 
     ![Block_Design](./png/Block_Design.png)
 
-14. 對 `adder_v1.0` 的 Output port led[3:0] 點右鍵 `Make External`
+15. 對 `adder_v1.0` 的 Output port led[3:0] 點右鍵 `Make External`
 
     ![External_LED](./png/External_Led.png)
 
-15. 將該 Output Port 改名為 `led`
+16. 將該 Output Port 改名為 `led`
 
     ![Rename](./png/Rename.png)
 
-16. 檢查 Address Editor 有沒有自動分配 Address 給我們剛寫好的 IP
+17. 檢查 Address Editor 有沒有自動分配 Address 給我們剛寫好的 IP
 
     ![Address_Editor](./png/Address_Editor.png)
 
-17. Create HDL Wrapper and Generate Bitstream
+18. Create HDL Wrapper and Generate Bitstream
 
-18. Export `.xsa` (include bitstream)
+19. Export `.xsa` (include bitstream)
 
 ## Part3.2 Vitis Project
 
@@ -112,12 +116,20 @@
     >
     > ![Driver](./png/Driver.png)
 
-3. 修改 platform 中的三個 makefile:
-    - platform/Sources/hw/sdt/drivers/<CustomIP_name>/src/Makefile
-    - platform/Sources/ps7_cortex_a9_0/standalone_domain/bsp/hw_artifacts/drivers/<CustomIP_name>/src/Makefile
-    - platform/Sources/zynq_fsbl/zynq_fsbl_bsp/hw_artifacts/<CustomIP_name>/src/Makefile  
-
-    將makefile中的 `OUTS = *.o` 修改為 `OUTS=$(addsuffix .o, $(basename $(wildcard *.c)))`
-4. Vitis 需要的是 `ps7_init.tcl`，然而自製 IP 也有屬於自己的 `tcl`，因此需要到 `Settings\launch.json` 的 `Initialization file` 修正
+3. Vitis 需要的是 `ps7_init.tcl`，然而自製 IP 也有屬於自己的 `tcl`，因此需要到 `Settings\launch.json` 的 `Initialization file` 修正
 
     ![Initialization](./png/Inititalization.png)
+
+4. Run the Program
+
+    ![MobaXterm](./png/MobaXterm.png)
+
+### Note
+
+若沒有執行 Part 3.1 的第 10 點，則需要修改 platform 中的三個 makefile
+
+- platform/Sources/hw/sdt/drivers/<CustomIP_name>/src/Makefile
+- platform/Sources/ps7_cortex_a9_0/standalone_domain/bsp/hw_artifacts/drivers/<CustomIP_name>/src/Makefile
+- platform/Sources/zynq_fsbl/zynq_fsbl_bsp/hw_artifacts/<CustomIP_name>/src/Makefile  
+
+將makefile中的 `OUTS = *.o` 修改為 `OUTS=$(addsuffix .o, $(basename $(wildcard *.c)))`
