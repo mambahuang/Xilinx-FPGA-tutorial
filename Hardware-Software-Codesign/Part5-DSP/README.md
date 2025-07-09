@@ -1,6 +1,7 @@
 # Part5-DSP
 
 ## What is DSP48E1？
+
 `DSP48E1 Slice` 是 `Xilinx 7 系列` FPGA 中專門用於高速數位訊號處理（DSP）的硬體資源。它整合了一組可組態的乘法器、加法器、累加器、邏輯單元與控制邏輯，並可用於建構乘加（MAC）、濾波器、FFT、SIMD 運算等高效能運算模組。
 
 ![DSP48E1](./png/DSP48E1.png)
@@ -50,7 +51,6 @@ DSP48E1 Slice 主要包含以下元件：
 | CARRYCASCIN    | `Cascade` 進位輸入，來自前一個 `DSP slice` 的進位結果。                          |
 | MULTSIGNIN     | 乘法結果的符號位輸入，用於多階乘加運算串接。                             |
 
-
 ## Part 5.2 Output Ports
 
 ![Output](./png/Output.png)
@@ -76,16 +76,16 @@ DSP48E1 Slice 主要包含以下元件：
 | Multiplier       | 25-bit × 18-bit 的二補數乘法器，支援乘法部分 cascade                    | 無需額外控制                 | - 輸出 43-bit ×2 partial products（共 86-bit）<br>- 支援 17-bit 右移後的 cascade（MULT-to-MULT 級聯）<br>- 可模擬 unsigned 運算（將 MSB 設為 0）<br>- 輸出可使用 MREG 做 pipeline |
 | Adder / Subtracter / Logic Unit | 嵌入式 ALU 支援加、減、與邏輯運算，為三輸入結構         | OPMODE, ALUMODE, CARRYINSEL | - 3 個輸入為 X、Y、CIN（常為 PCIN/CARRY）<br>- 加減控制由 ALUMODE 指定<br>- OPMODE 控制 X/Y/Z multiplexer 的輸入選擇<br>- 使用邏輯運算時禁止使用 multiplier |
 
-
 ## Part 5.4 DSP Macro
 
 ![DSP_macro](./png/DSP_macro.png)
 
->   🧠 DSP Macro 是什麼？
+> 🧠 DSP Macro 是什麼？
 >
->   DSP Macro 是基於 DSP48E1 Slice 的封裝化 IP ，提供參數化設定與易用介面。
+> DSP Macro 是基於 DSP48E1 Slice 的封裝化 IP ，提供參數化設定與易用介面。
 
 ### Instruction
+
 ![Instruction](./png/Instruction.png)
 
 在 `Instructions` 處設定 DSP 要處理的運算。
@@ -93,6 +93,7 @@ DSP48E1 Slice 主要包含以下元件：
 ---
 
 ### Pipeline Options
+
 ![Pipeline](./png/Pipeline.png)
 
 📘 DSP48E1 的 Pipeline Options
@@ -106,9 +107,10 @@ DSP48E1 Slice 主要包含以下元件：
 ---
 
 ### Implementation
+
 ![Implementation](./png/Implementation.png)
 
-在 `Input Port Properties` 設定處將 `AUTO` 模式切換成 `MANUAL` 模式，`Output Port Properties` 設定成 `User Defined ` 即可自行設定 I/O port 的寬度。
+在 `Input Port Properties` 設定處將 `AUTO` 模式切換成 `MANUAL` 模式，`Output Port Properties` 設定成 `User Defined` 即可自行設定 I/O port 的寬度。
 
 ## Part 5.5 Example Project
 
@@ -124,13 +126,12 @@ DSP48E1 Slice 主要包含以下元件：
 
 4. 完成設定後，加入三個 `GPIO IP` 、 `Zynq CPU`，完成後一樣做 `Block Automation`、`Connection Automation`。
 
-完成 Block design 如下圖 :
-![block_design](./png/block_design.png)
+    完成 Block design 如下圖 :
+    ![block_design](./png/block_design.png)
 
 5. `Create HDL Wrapper` -> `Generate Bitstream` -> `Export .xsa`
 
-6. 依照 [Part 4.4](../Part4-BRAM/README.md/) 的方法建立 `Vitis Project` 。
-
+6. 依照 [Part 4.4](../Part4-BRAM/README.md/) 的方法建立 `Vitis Project`。
 
 ## Part 5.5 Run & Result
 
@@ -138,7 +139,6 @@ DSP48E1 Slice 主要包含以下元件：
 
 ![result](./png/result.png)
 
-
-# Reference
+## Reference
 
 [7 Series DSP48E1 Slice User Guide (UG479)](https://docs.amd.com/v/u/en-US/ug479_7Series_DSP48E1)
