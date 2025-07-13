@@ -1,9 +1,37 @@
 # Part 5-2 AXI-IP
 
-## Introduction to AXI Interface
-### AXI Lite
+## Introduce to AXI Interface
+### 🔷 AXI 是什麼？
+AXI（Advanced eXtensible Interface）是一種常見的資料傳輸協定，主要用在 SoC（像 Zynq 或 PYNQ-Z2 這種把 ARM 處理器和 FPGA 合在一起的晶片）裡面，讓不同的元件之間可以互相傳送資料或控制指令。
 
-### AXI4
+在 PYNQ-Z2 上，我們常用 AXI 來讓 ARM 處理器控制我們自己設計的 FPGA 模組，例如：
+
+✅ 啟動某個功能
+
+✅ 設定參數
+
+✅ 傳送資料過去運算
+
+### 🔷 AXI 在 Zynq / PYNQ-Z2 上是做什麼用的？
+在 Zynq 裡面有兩大部分：
+
+- PS（Processing System）：ARM 處理器
+- PL（Programmable Logic）：FPGA（你寫的 Verilog / IP）
+
+AXI 就是 PS 和 PL 溝通的橋樑，幫助他們「講話」和「搬資料」：
+| 你想做的事             | AXI 的幫助                        |
+| ----------------- | ------------------------------ |
+| ARM 控制 FPGA 的模組運作 | 用 AXI-Lite 把設定值寫進去             |
+| ARM 把資料交給 FPGA 運算 | 用 AXI-Full 或 AXI-Stream 搬資料    |
+| ARM 告訴 DMA 去搬資料   | DMA 設定用 AXI-Lite，搬資料用 AXI-Full |
+
+### 🔷 AXI 有哪些種類？
+AXI 有幾種不同版本，根據用途分成下面幾類：
+| 種類                 | 特點                       | 適合做什麼                        |
+| ------------------ | ------------------------ | ---------------------------- |
+| **AXI-Lite**       | 傳送方式簡單，一次只傳一筆資料。         | 拿來**控制** FPGA 模組，比如設定值、啟動運算。 |
+| **AXI-Full（AXI4）** | 可以一次傳很多筆資料（支援 burst 傳輸）。 | 拿來**大量搬資料**，像是影像、音訊、記憶體資料等。  |
+| **AXI-Stream**     | 資料像水流一樣連續傳送，沒有地址的概念。     | 拿來做連續處理，例如影像濾波、音訊處理、AI 推論等。  |
 
 ## Simple Implementation with AXI-IP (AXI GPIO IP)
 ### Step 1. Create a new project
