@@ -133,7 +133,7 @@ DSP48E1 Slice 主要包含以下元件：
 
 6. 依照 [Part 4.4](../Part4-BRAM/README.md/) 的方法建立 `Vitis Project`。
 
-## Part 5.5 Run & Result
+## Part 5.6 Run & Result
 
 透過兩個 `GPIO` 寫入 `A`、`B` 的值，經過 `DSP` 運算完成後 ， 經由 GPIO 回傳 `A * B` 的結果。
 
