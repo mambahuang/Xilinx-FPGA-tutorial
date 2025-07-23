@@ -2,7 +2,7 @@
 
 ## What is DSP48E1？
 
-`DSP48E1 Slice` 是 `Xilinx 7 系列` FPGA 中專門用於高速數位訊號處理（DSP）的硬體資源。它整合了一組可組態的乘法器、加法器、累加器、邏輯單元與控制邏輯，並可用於建構乘加（MAC）、濾波器、FFT、SIMD 運算等高效能運算模組。
+`DSP48E1 Slice` 是 `Xilinx 7 系列` FPGA 中專門用於高速數位訊號處理（DSP）的硬體資源。它整合了一組 Configurable 的乘法器、加法器、累加器與邏輯單元，並可用於高效能運算中。
 
 ![DSP48E1](./png/DSP48E1.png)
 
@@ -19,7 +19,7 @@ DSP48E1 Slice 主要包含以下元件：
 
 3. Pre-Adder
 
-        D + A 相加，在進入乘法器前做前處理，常用於對稱濾波器。
+        D + A，在進入乘法器前做前處理，常用於 Symmetric filter。
 
 4. Pattern Detector
 
