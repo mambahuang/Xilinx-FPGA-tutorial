@@ -130,4 +130,18 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 
 9. Generate Bitstream 並 Export Hardware Bitstream
 
+> 📌 Address Editor  
+> 在 PYNQ-Z2 的 CPU 所使用的記憶體區間即為 `0x1000_0000 ~ 0x1FFF_FFFF (512MB)`，因此 DMA 所連接的 HP Port 必須 Memory Map 到該記憶體區段，在 Vivado 2023.2 的版本會自動幫你分配到該區段
+> ![Address_Editor](./png/Address_Editor.png)
+
 ## Part 7.2 Jupyter Notebook
+
+1. 將 PYNQ-Z2 以 SD 卡模式開機，並連線到FPGA板打開 Jupyter Notebook
+
+2. 將 `./src/DMA_FFT.ipynb`、`*.bit`、`*.hwh` 這些檔案放到 FPGA 板裡面
+
+3. 將讀取 Overlay 的檔名修改成你的 bit 檔名稱
+
+4. 執行程式
+
+5. 你就可以看到下面這些圖了🎉
