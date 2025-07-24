@@ -2,8 +2,30 @@
 
 本章將介紹如何在 PYNQ 上使用 **Direct Memory Access (DMA)** 模組實現資料傳輸，並加速 **FFT** 運算。
 
-## AXI Stream
+## Review AXI Stream
 
+![AXI_Stream](./png/AXI_Stream.png)
+
+### AXI Stream 基本訊號
+
+| 訊號名稱 | 方向 | 功能說明 |
+|----------|------|----------|
+| `TVALID` | Master ➜ Slave | 傳送端通知接收端資料有效 |
+| `TREADY` | Slave ➜ Master | 接收端準備好接收資料 |
+| `TDATA`  | Master ➜ Slave | 資料 |
+| `TLAST`  | Master ➜ Slave | 表示此資料為最後一筆 |
+| `TKEEP`  | Master ➜ Slave | Byte-level 有效位元 Mask |
+
+### Handshake Mechanism
+
+當 `TVALID` 與 `TREADY` 同時為高時，資料才會被傳輸。  
+由 `TLAST=1` 來表示「一筆資料傳輸的結束」。  
+
+> 如果接收端突然把 TREADY 從 1 拉成 0，會怎樣？  
+>
+> - 傳送端仍然會保持 TVALID=1，表示資料還是有效、準備好傳送。
+> - 但資料不會實際送出或被接收，因為 TVALID & TREADY ≠ 1。
+> - 傳送端會「停住」在當前那筆資料，不會推進到下一筆，直到 TREADY 再次變成 1。
 
 ## DMA Module
 
