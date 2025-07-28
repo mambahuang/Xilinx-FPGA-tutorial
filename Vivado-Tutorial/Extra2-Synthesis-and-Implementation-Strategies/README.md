@@ -11,7 +11,9 @@ Vivado 在執行 `Synthesis` 和 `Implementation` 時，提供了多種可選的
 這些策略會根據設計的不同需求（例如高速 vs 小面積）進行優化調整。
 
 ## Synthesis
+
 ![Synthesis](./png/Synthesis.png)
 
 ## Implementation
+
 ![Implementation](./png/Implementation.png)

@@ -225,19 +225,19 @@ Xilinx FPGA 設計流程可以分為以下 6 個步驟：
 
 2. 將 8 號區的 Jumper 插至 `JTAG` 的位置
 
-> [!NOTE]
-> **JTAG (Joint Test Action Group)**
->
-> JTAG 是一種標準的 Debug 與燒錄介面，主流 FPGA（如 Xilinx、Intel）都支援此標準。
->
-> FPGA 在使用 `JTAG` 模式下進行配置時，會根據 IEEE 1149.1 標準進行串列資料傳輸。
->
-> 可將我們的 Bitstream 透過 `Boundary-Scan` 的方式燒入進去板子中
+    > [!NOTE]
+    > **JTAG (Joint Test Action Group)**
+    >
+    > JTAG 是一種標準的 Debug 與燒錄介面，主流 FPGA（如 Xilinx、Intel）都支援此標準。
+    >
+    > FPGA 在使用 `JTAG` 模式下進行配置時，會根據 IEEE 1149.1 標準進行串列資料傳輸。
+    >
+    > 可將我們的 Bitstream 透過 `Boundary-Scan` 的方式燒入進去板子中
 
 3. 打開開關 (3號區)
 
-> [!CAUTION]
->**關機時一定要先關閉開關才可以拔除電源線**
+    > [!CAUTION]
+    >**關機時一定要先關閉開關才可以拔除電源線**
 
 4. 開啟 FPGA 後，回到 Vivado 並點選 `Open Hardware Manager` → `Open Target` → `Auto Connect`
 
