@@ -86,4 +86,18 @@
 
 2. Create HDL Wrapper & Generate Bitstream
 
-3.
+3. Export Bitstream File
+
+    ![Export](./png/Export.png)
+
+    > Vivado 2021.2 之後的版本，將電路燒入進去 PYNQ 裡面只需要 `*bit`、`*.hwh`，若你使用的是之前的版本還需要透過 `Export Block Design` 生成出 `*.tcl` 檔案才可以燒入
+
+4. 連線進入 jupyter notebook，創建一個新資料夾，並上傳 `*bit`、`*.hwh`
+
+    ![Upload](./png/upload.png)
+
+    >`*hwh` 檔範例位置
+    >
+    >![hwh_path](./png/hwh_path.png)
+
+5. 
