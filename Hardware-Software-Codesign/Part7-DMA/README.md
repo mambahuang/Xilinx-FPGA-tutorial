@@ -82,7 +82,6 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 2. 加入 `Zynq7_PS`、`AXI_DMA`、`Fast Fourier Transform`、`AXI4-Stream Data Width Converter * 2`，並且 `Run Block Automation`
 
     ![Add_IP](./png/Add_IP.png)
-    ![alt text](image.png)
 
 3. 點開 `Zynq7_PS` 的設定介面，`PS-PL Configuration > HP Slave AXI interface > S AXI HP0 interface and S AXI HP2 interface` 將兩者都打勾並且將 width 都設定成 **64bit**
 
@@ -161,17 +160,24 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 
     ![DMA_to_FFT](./png/DMA_to_FFT.png)
 
-9. `Run Connection Automation 兩次`，最後 Block Design 將如下方所示
+9. `Run Connection Automation`
+
+    ![Auto_Connection_1](./png/Auto_Connection_1.png)
+
+    ![Auto_Connection_2](./png/Auto_Connection_2.png)
+
+10. 最後的 Block Design 和 Address Editor 如下圖所示
 
     ![Final_BD](./png/Final_BD.png)
 
-10. Create HDL Wrapper
+    ![Address_Editor](./png/Address_Editor.png)
 
-11. Generate Bitstream 並 Export Hardware Bitstream
+    > 📌 Address Editor  
+    > 在 PYNQ-Z2 的 CPU 所使用的記憶體區間即為 `0x1000_0000 ~ 0x1FFF_FFFF (512MB)`，因此 DMA 所連接的 HP Port 必須 Memory Map 到該記憶體區段，在 Vivado 2023.2 的版本會自動幫你分配到該區段
 
-> 📌 Address Editor  
-> 在 PYNQ-Z2 的 CPU 所使用的記憶體區間即為 `0x1000_0000 ~ 0x1FFF_FFFF (512MB)`，因此 DMA 所連接的 HP Port 必須 Memory Map 到該記憶體區段，在 Vivado 2023.2 的版本會自動幫你分配到該區段
-> ![Address_Editor](./png/Address_Editor.png)
+11. Create HDL Wrapper
+
+12. Generate Bitstream 並 Export Hardware Bitstream
 
 ## Part 7.2 Jupyter Notebook
 
