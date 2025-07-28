@@ -114,4 +114,4 @@
 
 ## Additional  
 
-[Extra4-Debugger](../Extra4-Debugger/)
+[Extra4-ILA-with-PYNQ](../Extra4-ILA-with-PYNQ/)

@@ -50,7 +50,7 @@ PYNQ 透過 Python 封裝與 Jupyter Notebook 介面，極大化簡化了傳統�
 7. [Part4-BRAM](./Part4-BRAM/)
 8. [Part5-DSP](./Part5-DSP/)
 9. [Part6-PYNQ-Jupyter-Notebook](./Part6-PYNQ-Jupyter-Notebook/)
-10. [Extra4-Debbuger](./Extra4-Debugger/)
+10. [Extra4-ILA-with-PYNQ](./Extra4-ILA-with-PYNQ/)
 11. [Part7-DMA](./Part7-DMA/)
 12. [Part8-CDMA(未完)](./Part7-CDMA/)
 13. [Part9-HDMI](./Part9-HDMI/)
