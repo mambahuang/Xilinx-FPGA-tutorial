@@ -185,7 +185,3 @@ set_property BOARD_PART_PIN {sws_2bits_tri_i_1} [get_ports gpio_io_i[1]]
 [Extra2-AXI-Mapping](../Extra2-AXI-Mapping/)
 
 [Extra3-AXI-Protocol](../Extra3-AXI-Protocol/)
-
-## Lab2 AXI-GPIO
-
-[Lab2-AXI-GPIO](../Lab/Lab2-AXI-GPIO/)
