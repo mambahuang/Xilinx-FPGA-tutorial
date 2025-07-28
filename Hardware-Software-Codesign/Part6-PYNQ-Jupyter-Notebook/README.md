@@ -92,7 +92,9 @@
 
     > Vivado 2021.2 之後的版本，將電路燒入進去 PYNQ 裡面只需要 `*bit`、`*.hwh`，若你使用的是之前的版本還需要透過 `Export Block Design` 生成出 `*.tcl` 檔案才可以燒入
 
-4. 連線進入 jupyter notebook，創建一個新資料夾，並上傳 `*bit`、`*.hwh`
+4. 連線進入 jupyter notebook，創建一個新資料夾，並上傳 `*bit`、`*.hwh`，這兩個檔案必須在相同的位置
+
+    > `*bit`、`*.hwh` 兩者檔名需相同
 
     ![Upload](./png/upload.png)
 
@@ -100,4 +102,12 @@
     >
     >![hwh_path](./png/hwh_path.png)
 
-5. 
+5. 執行程式就可以看到輸入跟 FPGA 板上 LED 燈的關係，PYNQ 程式的部分自行理解，官方網站有提供很多library 讓我們使用  
+
+    [PYNQ_Library_Website](https://pynq.readthedocs.io/en/v2.3/pynq_libraries.html)
+
+    ![Run](./png/Run.png)
+
+    > 📌 overlay = Overlay("example.bit") 是什麼意思？  
+    >
+    > 這行會載入名為 example.bit 的 bitstream 檔案，將你的硬體電路設計燒錄到 FPGA 上，並同時讀入對應的 .tcl / .hwh 檔案來建立 IP 區塊的對應資訊（像是記憶體地址、接口等）。
