@@ -57,28 +57,27 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 - Enable Scatter Gather Engine:  
     DMA 的 Scatter-Gather (SG) Mode 是為了處理多筆、分散在記憶體不同位置的資料，讓 DMA 可以自動依照 descriptor 傳輸多段資料，而不需要 CPU 一直介入控制。 (若無特殊需求，則建議停用此功能，使用較簡單的 Simple Mode 即可)
 
-- Width of Buffer Length Register (8–26)  
+- Width of Buffer Length Register (8–26):  
     這是 DMA 寫入/讀取的最大 buffer 長度限制，DMA 一次最大可以搬運多少資料，**以 Byte 為單位**，最大值為26代表每次最多可傳輸 2^26 = **64MB** 的資料。
 
-- Address Width (32–64)  
+- Address Width (32–64):  
     代表 DMA 可以搬運的記憶體空間大小，在 Zynq7000 系列的晶片組 (PYNQ-Z2只有512MB DDR) 設置成 32 即可對應到 4G 的記憶體
 
-- Memory Map Data Width  
-    將會修改 AXI_MM2S/AXI_S2MM interface 的 rdata 寬度，直接影響 DMA 讀取 Memory 的資料寬度
+- Memory Map Data Width:  
+    將會修改 AXI_MM2S / AXI_S2MM interface 的 rdata 寬度，直接影響 DMA 讀取 Memory 的資料寬度
 
-- Stream Data Width  
-    將會修改 AXIS_S2MM/AXIS_MM2S interface 的 tdata 寬度。影響後續Stream 端配接的 downstream IP（如 FFT、video）也要用同樣寬度。
+- Stream Data Width:  
+    將會修改 AXIS_S2MM / AXIS_MM2S interface 的 tdata 寬度。影響後續Stream 端配接的 downstream IP（如 FFT、video）也要用同樣寬度。
+
+- Burst:  
+    DMA 裡的 Burst 設定是影響 AXI4-Memory Mapped interface（m_axi_mm2s / m_axi_s2mm） 的行為，它決定了一次 AXI Protocol Handshake 後可以傳輸幾筆資料，進而提升 Throughput
+
+- Allow Unaligned Transfers:  
+    可支援非對齊的資料地址
 
 ## FFT Module
 
 ## Part 7.1 Vivado Block Design
-
-### GP (General Purpose) port vs HP (High Performance) port
-
-| 介面類型 | 名稱 | 資料方向 | 頻寬與用途 |
-|---------|------|---------|-----------|
-| **GP Port** | `AXI_GP` | PS ➜ PL / PL ➜ PS | 一般用途，低頻寬，**用於設定、控制 IP**（如 AXI Lite） |
-| **HP Port** | `AXI_HP` | PL ➜ PS | **高頻寬**，適合 DMA 讀取寫入 DDR 使用 |
 
 1. Create a new Vivado Project and Create a new Block Design
 2. 加入 `Zynq7_PS`、`AXI_DMA`、`Fast Fourier Transform`，並且 `Run Block Automation`
