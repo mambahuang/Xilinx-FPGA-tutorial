@@ -45,9 +45,29 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 | **introut (mm2s/s2mm)** | 傳輸完成的 interrupt 訊號，若使用 interrupt mode 時連接至 ZYNQ PS | — |
 
 ![DMA_diagram](./png/DMA_diagram.png)
+
 >📌請注意上圖 DDR Controller 實際上是在 ZYNQ7_PS 當中
 >
 >![PS_internal](./png/PS_internal.png)
+
+### Settings
+
+![DMA_Settings_ex](./png/DMA_Settings_ex.png)
+
+- Enable Scatter Gather Engine:  
+    DMA 的 Scatter-Gather (SG) Mode 是為了處理多筆、分散在記憶體不同位置的資料，讓 DMA 可以自動依照 descriptor 傳輸多段資料，而不需要 CPU 一直介入控制。 (若無特殊需求，則建議停用此功能，使用較簡單的 Simple Mode 即可)
+
+- Width of Buffer Length Register (8–26)  
+    這是 DMA 寫入/讀取的最大 buffer 長度限制，DMA 一次最大可以搬運多少資料，**以 Byte 為單位**，最大值為26代表每次最多可傳輸 2^26 = **64MB** 的資料。
+
+- Address Width (32–64)  
+    代表 DMA 可以搬運的記憶體空間大小，在 Zynq7000 系列的晶片組 (PYNQ-Z2只有512MB DDR) 設置成 32 即可對應到 4G 的記憶體
+
+- Memory Map Data Width  
+    將會修改 AXI_MM2S/AXI_S2MM interface 的 rdata 寬度，直接影響 DMA 讀取 Memory 的資料寬度
+
+- Stream Data Width  
+    將會修改 AXIS_S2MM/AXIS_MM2S interface 的 tdata 寬度。影響後續Stream 端配接的 downstream IP（如 FFT、video）也要用同樣寬度。
 
 ## FFT Module
 
@@ -118,7 +138,7 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 6. 手動接線
     - `DMA:M_AXIS_MM2S -> FFT:S_AXIS_DATA`
     - `FFT:M_AXIS_DATA -> DMA:S_AXIS_S2MM`
-    - `DMA:aclk -> ZYNQ7_PS:FCLK_CLK0`
+    - `FFT:aclk -> ZYNQ7_PS:FCLK_CLK0`
 
     ![DMA_to_FFT](./png/DMA_to_FFT.png)
 
