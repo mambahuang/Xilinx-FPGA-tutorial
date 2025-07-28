@@ -122,7 +122,7 @@ BRAM 的 `Depth` 不再由 `Block Memory Generator IP` 的介面設定，而是�
 
 1. Create a New Vivado Project and Create a New Block Design
 
-2. 加入 `ZYNQ7 Processing System`，並點選上方的 `Run Block Automation `
+2. 加入 `ZYNQ7 Processing System`，並點選上方的 `Run Block Automation`
 
 3. 將 `ZYNQ7 Processing System` 設定中的 `Peripheral I/O Pins`，全部取消並只勾選 `UART0`
 

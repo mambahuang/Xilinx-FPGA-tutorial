@@ -162,7 +162,7 @@
 
 ## Reference
 
-https://github.com/Xinyang-ZHANG/PYNQ-Z2/blob/main
+<https://github.com/Xinyang-ZHANG/PYNQ-Z2/blob/main>
 
 [Xilinx Video Series and Blog Posts](https://adaptivesupport.amd.com/s/question/0D52E00006hpsS0SAI/xilinx-video-series-and-blog-posts?language=en_US)
 
