@@ -71,7 +71,7 @@
 
     只有當兩邊同時為 1 時，傳輸才會被執行
 
-10. 點開你的 IP repo 資料夾，找到 Adder IP 的 `driver -> your_IP_name -> src` 資料夾，將內部的 `makefile` 替換成 `Driver/makefile`
+10. 點開你的 IP repo 資料夾，找到 Adder IP 的 `driver -> your_IP_name -> src` 資料夾，將內部的 `Makefile` 內容替換成 `Driver/Makefile` ， 直接複製貼上內部的內容，不要取代掉該檔案
 
     ![Makefile_Add](./png/Makefile_Add.png)
 

@@ -77,3 +77,13 @@
     ![Final](./png/Final.png)
 
 ## Part6.3 PYNQ Overlay
+
+1. Create Block Design，並建立如下的 Block Design，GPIO 選擇 `LED`
+
+    ![Led_4bits](./png/Led_4bits.png)
+
+    ![Block_Design](./png/Block_Design.png)
+
+2. Create HDL Wrapper & Generate Bitstream
+
+3.
