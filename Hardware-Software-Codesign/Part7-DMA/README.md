@@ -181,7 +181,7 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 
 ## Part 7.2 Jupyter Notebook
 
-1. 將 PYNQ-Z2 以 SD 卡模式開機，並連線到FPGA板打開 Jupyter Notebook
+1. 將 PYNQ-Z2 以 SD 卡模式開機，並連線到 FPGA 板打開 Jupyter Notebook
 
 2. 將 `./src/DMA_FFT.ipynb`、`*.bit`、`*.hwh` 這些檔案放到 FPGA 板裡面
 
@@ -190,3 +190,9 @@ DMA 在 Xilinx 提供的 IP 當中有分兩種 Mode，分別是 `Scatter Gather 
 4. 執行程式
 
 5. 你就可以看到下面這些圖了🎉
+
+    ![sin](./png/sin.png)
+
+    ![cos](./png/cos.png)
+
+    ![rect](./png/rect.png)
