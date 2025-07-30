@@ -1,11 +1,10 @@
-FPGA Design Lab5-1 - How to Use DSP Module with Block Design
-===
+# How to Use DSP Module with Block Design
 
-# Purpose
+## Purpose
 
 使用 Block Design 的方式呼叫 DSP48E1 模組。
 
-# Implementation Flow
+## Implementation Flow
 
 建立一個專案，**路徑不能有空白**
 
@@ -51,9 +50,9 @@ FPGA Design Lab5-1 - How to Use DSP Module with Block Design
 
 ![Block Design 3](images/block_design_3_24.jpg)
 
-接著參照之前的 Lab，將 Block Design 轉換成 HDL Wrapper 後產生 bitstream，並 Export Hardware 後開啟 Vitis
+接著將 Block Design 轉換成 HDL Wrapper 後產生 bitstream，並 Export Hardware 後開啟 Vitis
 
-開啟 Vitis 後和先前 Lab 一樣 Create Application Project、選擇剛匯出的 .xsa file.
+開啟 Vitis 後，Create Application Project、選擇剛匯出的 .xsa file.
 
 建立專案後在專案內的 /src 資料夾加入 `/src/main.c`，接著 `build project`，並燒錄到 FPGA 上執行，並使用 PuTTy 驗證電路行為。
 
