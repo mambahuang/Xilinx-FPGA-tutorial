@@ -13,15 +13,16 @@
 
 ---
 
-##  Extra3.2  PYNQ-Z2 的 constraint 來源
+## Extra3.2  PYNQ-Z2 的 constraint 來源
+
 [PYNQ-Z2 的 constraint下載連結](https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2_v1.0.xdc.zip)  
 
 使用時請記得：
--   **取消註解**（移除 `#`）你需要使用的腳位設定
--   **修改 port 名稱**（`get_ports { XXX }`）以符合你 RTL 裡的 top-level signal 名稱
 
+- **取消註解**（移除 `#`）你需要使用的腳位設定
+- **修改 port 名稱**（`get_ports { XXX }`）以符合你 RTL 裡的 top-level signal 名稱
 
-    ###  1. Clock 來源
+  ### 1. Clock 來源
 
     ```xdc
     Clock signal 125 MHz
@@ -33,15 +34,18 @@
     純硬體 Design 時，PYNQ-Z2 的主要 Clock 輸入為 125 MHz，腳位為 H16
     你可以將 **sysclk** 改成 RTL 中的 port 名稱（e.g. clk）。
 
-    軟硬體 Codesign 時， Clock 通常都會使用到 Zynq Processing System (PS) 匯出的 FCLK，此時則不需要再使用 **set_property** ，來指定Clock腳位，但仍需自行在 .xdc 中加入 create_clock 約束，提供 Vivado 正確的時序資訊。
+    軟硬體 Codesign 時， Clock 通常都會使用到 Zynq Processing System (PS) 匯出的 FCLK，此時則不需要再使用 **set_property** ，來指定Clock腳位，create_clock 約束 Vivado 也會自動幫你生成。
 
-    ### 2.  Switches
+  ### 2.  Switches
+
     ```xdc
     ##Switches
     #set_property -dict { PACKAGE_PIN M20   IOSTANDARD LVCMOS33 } [get_ports { sw[0] }];
     #set_property -dict { PACKAGE_PIN M19   IOSTANDARD LVCMOS33 } [get_ports { sw[1] }];
     ```
+
     板上的兩個實體切換開關（SW0, SW1），對應腳位為 M20 與 M19
     RTL 中若有 input [1:0] sw 可直接取消註解並使用。
 
-    ### 3. 其餘則以上述即可類推使用
+  ### 3. 其餘則以上述即可類推使用
+  

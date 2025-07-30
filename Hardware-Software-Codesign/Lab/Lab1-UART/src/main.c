@@ -18,13 +18,16 @@
  */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
 #include "xil_types.h" //u8 type
 #include "xuartps.h" //UART device
 #include "xparameters.h" //device ID
 #include "sleep.h"
 
 #define BAUDRATE 115200
-#define IMAGESIZE 512*512
+#define IMAGESIZE 512 * 512
 #define HEADERSIZE 1080
 #define FILESIZE IMAGESIZE + HEADERSIZE
 
@@ -47,12 +50,12 @@ int main(){
 	myUartConfig = XUartPs_LookupConfig(0); // UART 0 device
 	status = XUartPs_CfgInitialize(&myUart, myUartConfig, myUartConfig->BaseAddress);
 	if(status != XST_SUCCESS){
-		print("UART Initialization FAIL!!");
+		printf("UART Initialization FAIL!!");
 	}
 
 	status = XUartPs_SetBaudRate(&myUart, BAUDRATE);
 	if(status != XST_SUCCESS){
-			print("Baud rate Initialization FAIL!!");
+			printf("Baud rate Initialization FAIL!!");
 	}
 
 	//Data transfer from Computer to DDR
@@ -65,14 +68,13 @@ int main(){
     //Complete yourself
 
 
-    
+
     //Complete yourself
-    
+
 	//Send Data to the Computer
 	while(totaltransmittedBytes  < FILESIZE){
 		transmittedBytes = XUartPs_Send(&myUart, (u8*)&imageData[totaltransmittedBytes], 1);
 		totaltransmittedBytes += transmittedBytes;
-		usleep(2000);
 	}
 	return 0;
-} 
+}
