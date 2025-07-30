@@ -1,5 +1,4 @@
-FPGA Design Lab5 - How to Use DSP Module
-===
+# How to Use DSP Module
 
 ## Purpose
 
