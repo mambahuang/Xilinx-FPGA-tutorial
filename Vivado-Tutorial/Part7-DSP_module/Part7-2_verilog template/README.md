@@ -1,5 +1,4 @@
-FPGA Design Lab5-2 - How to Use DSP Module with Verilog Template
-===
+# How to Use DSP Module with Verilog Template
 
 # Purpose
 
@@ -234,7 +233,7 @@ DSP48E1_inst (
 |110|A[24]| XNOR B[17] Rounding A x B
 |111|P[47]|For rounding P (round towards zero). Must select with PREG = 1
 
-# Lab Project
+# Practice
 
 ### Purpose
 
@@ -264,7 +263,7 @@ A Simple Software-Harware Co-Design Example
 
 ![BD3](images/bd3_24.jpg)
 
-> 連接完可用 Validate Design 做初步檢查
+> 📌 連接完可用 Validate Design 做初步檢查
 
 接著一樣 `Create HDL Wrapper` -> `Generate Bitstream` -> `Export Hardware` -> `Launch Vitis IDE`
 
