@@ -5,8 +5,6 @@
 開始前請先參考 [Part1 Vivado Basic Tutorial](../Part1-Vivado-Basic-Tutorial/README.md)
 建立一個 Vivado Project
 
-假設我們已經有一個簡單的加法器程式 `adder.v`，以及對應的 Testbench `tb.v`：
-
 ## Part 2.1 Open Project and Add Source File
 
 1. 開啟 Vivado，點選左邊選單中的 `Open Project`
