@@ -22,7 +22,7 @@
 - **取消註解**（移除 `#`）你需要使用的腳位設定
 - **修改 port 名稱**（`get_ports { XXX }`）以符合你 RTL 裡的 top-level signal 名稱
 
-### Clock 來源
+### 1. Clock 來源
 
     Clock signal 125 MHz
 
@@ -34,7 +34,7 @@
 
 軟硬體 Codesign 時， Clock 通常都會使用到 Zynq Processing System (PS) 匯出的 FCLK，此時則不需要再使用 **set_property** ，來指定Clock腳位，create_clock 約束 Vivado 也會自動幫你生成。
 
-### Switches
+### 2. Switches
 
     ##Switches
     #set_property -dict { PACKAGE_PIN M20   IOSTANDARD LVCMOS33 } [get_ports { sw[0] }];
@@ -44,3 +44,4 @@
 RTL 中若有 input [1:0] sw 可直接取消註解並使用。
 
 ### 3. 其餘則以上述即可類推使用
+  
