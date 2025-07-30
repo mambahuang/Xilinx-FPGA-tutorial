@@ -1,5 +1,4 @@
-FPGA Design Lab6 - Python + Zynq = PYNQ
-===
+# Python + Zynq = PYNQ
 
 ## Purpose
 
@@ -43,17 +42,17 @@ FPGA Design Lab6 - Python + Zynq = PYNQ
 
 ## Preparation
 
-這次使用 Lab 5-2 的範例，使用 7zip 或是 WinRAR 等壓縮程式開啟xsa檔，將裡面的 `design.bit` 和 `design.hwh` 兩個檔案提取出來。
+這次使用 Part 7-2 的範例，使用 7zip 或是 WinRAR 等壓縮程式開啟xsa檔，將裡面的 `design.bit` 和 `design.hwh` 兩個檔案提取出來。
 
 ![RAR](images/rar.jpg)
 
-而這次 lab 已經將需要的檔案都放在`Lab6_example`內了，直接將整個資料夾複製到 `\xilinx\jupyter_notebooks`內。
+而這次練習已經將需要的檔案都放在`Part8_example`內了，直接將整個資料夾複製到 `\xilinx\jupyter_notebooks`內。
 
 ## Jupyter Notebook
 
 1. 打開瀏覽器，輸入位址: `192.168.2.99:9090` (預設密碼也是xilinx)
 
-2. 打開 `/Lab6_example/lab6.ipynb`
+2. 打開 `/Part8_example/part8.ipynb`
 
 ![ipynb](images/ipynb.jpg)
 
