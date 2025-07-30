@@ -62,7 +62,7 @@ DSP48E1_inst (
 |MASK|HEX|48-bit HEX|All ones|This 48-bit value is used to mask out certain bits during a pattern detection. `Note1`|
 |SEL_MASK|STRING|"MASK", "C", "ROUNDING_MODE1", "ROUNDING_MODE2"|"MASK"|Selects the mask to be used for the pattern detector.|
 
-> Note1 :  
+> 📌 Note1 :  
 > - When a MASK bit is set to 1, the corresponding pattern bit is ignored.  
 > - When a MASK bit is set to 0, the pattern bit is compared.
 
@@ -108,7 +108,7 @@ DSP48E1_inst (
 |PCOUT<47:0> |Output| 48 |Cascaded data output to PCIN of next DSP48E1 slice. If used, connect to PCIN of downstream cascaded DSP slice. If not used, leave unconnected.|
 |RST~|Input|1|Active-High synchronous reset for ~ pipeline registers. Tie to logic zero if not used.|
 
-> Note2 :
+> 📌 Note2 :
 > - When used with the multiplier or pre-adder, 25-bits of data (A[24:0]) is used and upper bits (A[29:25]) are unused and may be tied to ground.
 > - When using the internal adder/subtracter/accumulator or ALU circuit, all 30-bits are used (A[29:0]).
 > - When used in concatenation mode, all 30-bits are used and this constitutes the MSB (upper) bits of the concatenated vector.
