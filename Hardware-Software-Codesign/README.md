@@ -3,6 +3,7 @@
 本章節將介紹如何在 Zynq 系列 FPGA 上進行軟硬體協同設計（Hardware-Software Codesign）。
 
 ## What's Zynq
+
 Zynq 系列晶片將 **Programmable Logic（PL）** 與 **Processing System（PS）**整合在同一晶片中，實現軟體硬體的協同設計。
 
 | 區塊 | 說明 |
@@ -13,15 +14,16 @@ Zynq 系列晶片將 **Programmable Logic（PL）** 與 **Processing System（PS
 ![PS_PL](./png/PS_PL.png)
 
 ## What's Pynq
+
 PYNQ（Python Productivity for Zynq）是由 Xilinx 推出的開源框架，目的是讓開發者能夠以 Python 程式語言來控制 Zynq FPGA 中的硬體設計。
 
 在 Zynq 設計傳統流程中，控制 FPGA 上的自訂邏輯通常需要：
 
--   使用 RTL 設計硬體電路
+- 使用 RTL 設計硬體電路
 
--   搭配 C/C++ 編寫韌體或軟體應用程式
+- 搭配 C/C++ 編寫韌體或軟體應用程式
 
--   交叉編譯
+- 交叉編譯
 
 PYNQ 透過 Python 封裝與 Jupyter Notebook 介面，極大化簡化了傳統的軟硬體整合流程。
 
@@ -38,3 +40,18 @@ PYNQ 透過 Python 封裝與 Jupyter Notebook 介面，極大化簡化了傳統�
 ![PYNQ_2](./png/PYNQ_2.png)
 
 ## 📘 推薦閱讀順序  
+
+1. [Part1-Zynq-Processor](./Part1-Zynq-Processor/)
+2. [Part2-AXI-GPIO](./Part2-AXI-GPIO/)
+3. [Extra1-Vitis-Change-xsa](./Extra1-Vitis-Change-xsa/)
+4. [Part3-AXI-Lite](./Part3-AXI-Lite/)
+5. [Extra2-AXI-Mapping](./Extra2-AXI-Mapping/)
+6. [Part4-BRAM](./Part4-BRAM/)
+7. [Part5-DSP](./Part5-DSP/)
+8. [Part6-PYNQ-Jupyter-Notebook](./Part6-PYNQ-Jupyter-Notebook/)
+9. [Extra3-ILA-with-PYNQ](./Extra3-ILA-with-PYNQ/)
+10. [Part7-DMA](./Part7-DMA/)
+11. [Part8-CDMA](./Part8-CDMA/)
+12. [Part9-HDMI](./Part9-HDMI/)
+13. [Part10-Interrupt-xlconcat+IRQ_F2P](./Part10-Interrupt-xlconcat+IRQ_F2P/)
+14. [Part11-Interrupt-AXI-Interrupt-Controller](./Part11-Interrupt-AXI-Interrupt-Controller/)
